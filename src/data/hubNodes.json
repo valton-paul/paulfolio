@@ -1,0 +1,52 @@
+[
+  {
+    "id": "signal-interface",
+    "label": "Signal_01",
+    "hint": "Interface expérimentale détectée",
+    "kind": "project",
+    "x": 18,
+    "y": 26
+  },
+  {
+    "id": "mem-fragment",
+    "label": "Mémoire_∆",
+    "hint": "« Je construis des interfaces comme on écrit des rêves. »",
+    "kind": "fragment",
+    "x": 58,
+    "y": 30
+  },
+  {
+    "id": "projects-page",
+    "label": "Archive_Projets",
+    "hint": "Tous les artefacts alignés dans une même chambre froide.",
+    "kind": "projectsPage",
+    "x": 50,
+    "y": 18
+  },
+  {
+    "id": "prototype-derivant",
+    "label": "Sujet_03",
+    "hint": "Prototype en dérive / creative dev",
+    "kind": "project",
+    "x": 32,
+    "y": 62
+  },
+  {
+    "id": "gateway-contact",
+    "label": "Noyau verrouillé",
+    "hint": "Le canal de contact n’apparaît qu’après insistance.",
+    "kind": "gateway",
+    "x": 72,
+    "y": 72
+  },
+  {
+    "id": "profile-page",
+    "label": "Profil_Fragmenté",
+    "hint": "Notes de terrain, obsessions visuelles et trajectoire.",
+    "kind": "profilePage",
+    "x": 86,
+    "y": 48
+  }
+]
+
+

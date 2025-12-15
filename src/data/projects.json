@@ -1,0 +1,46 @@
+[
+  {
+    "id": "signal-interface",
+    "code": "Signal_01",
+    "title": "Interface expérimentale",
+    "role": "UX, direction artistique, creative dev",
+    "tags": ["Interface", "Immersion", "Expérimentation"],
+    "status": "actif",
+    "type": "interface / expérience numérique",
+    "description": [
+      "Une interface pensée comme un terrain de jeu sensoriel plutôt qu’un simple écran.",
+      "Navigation non linéaire, transitions cinématographiques et micro-glitch contrôlés.",
+      "Rôle : conception UX, direction artistique, développement front (Vue / Canvas)."
+    ]
+  },
+  {
+    "id": "prototype-derivant",
+    "code": "Sujet_03",
+    "title": "Prototype en dérive",
+    "role": "Exploration créative, animation, scripting",
+    "tags": ["Narration", "Scroll", "Motion"],
+    "status": "actif",
+    "type": "interface / expérience numérique",
+    "description": [
+      "Prototype d’expérience web où l’interface se déforme au rythme de l’exploration.",
+      "Le scroll devient une narration, le curseur un révélateur de fragments.",
+      "Rôle : exploration créative, animation, scripting d’interactions."
+    ]
+  },
+  {
+    "id": "lab-fragments",
+    "code": "Archive_∆",
+    "title": "Fragments de laboratoire",
+    "role": "R&D visuelle, POCs rapides",
+    "tags": ["R&D", "Micro-interactions", "WIP"],
+    "status": "wip",
+    "type": "collection d’expérimentations",
+    "description": [
+      "Une collection mouvante de prototypes, tentatives et idées brutes.",
+      "Terrain d’essai pour des interfaces étranges, des états intermédiaires et des glitchs contrôlés.",
+      "Rôle : recherche, itération rapide, documentation des pistes à creuser."
+    ]
+  }
+]
+
+

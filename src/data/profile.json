@@ -1,0 +1,50 @@
+{
+  "name": "Paul Valton",
+  "title": "Full Stack Developer",
+  "location": "Montpellier",
+  "headline": "Creative developer & designer narratif.",
+  "about": "Étudiant en 3ᵉ année de BUT Informatique (RACDV), je combine développement full stack, rigueur technique et envie de raconter des choses à travers les interfaces.",
+  "aboutSecondary": "Mon terrain de jeu va du back au front, mais avec une obsession particulière pour l’ergonomie, la qualité de code et les expériences web qui sortent du cadre.",
+  "coordinates": "Basé à Montpellier · Français natif, Anglais B1.",
+  "skills": [
+    "Typescript",
+    "Symfony",
+    "Next.js",
+    "Docker",
+    "MySQL",
+    "Git",
+    "Qualité de code",
+    "Agile",
+    "Autonomie & communication"
+  ],
+  "education": [
+    {
+      "title": "BUT Informatique — RACDV",
+      "period": "2021 – 2025",
+      "place": "IUT de Montpellier-Sète",
+      "details": "Spécialité Réalisation d’Applications : Conception, Développement, Validation."
+    },
+    {
+      "title": "Baccalauréat STI2D — spécialité SIN",
+      "period": "2021",
+      "place": "Lycée Jean-François Champollion, Montpellier",
+      "details": ""
+    }
+  ],
+  "experiences": [
+    {
+      "title": "Stage Développeur Full-Stack — CA-GIP",
+      "period": "Avril 2025 – Août 2025",
+      "place": "Crédit Agricole Group Infrastructure Platform",
+      "details": "Mise en place d’une application sous Kubernetes pour automatiser et vérifier des informations pour les équipes DevOps."
+    },
+    {
+      "title": "Stage Conception de process métier — Nexecur",
+      "period": "Avril 2024 – Juin 2024",
+      "place": "",
+      "details": "Amélioration de l’organisation par la conception et la mise en œuvre de processus métiers automatisés."
+    }
+  ]
+}
+
+
