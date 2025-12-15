@@ -1,12 +1,12 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue'
 
-import SceneVestibule from './components/SceneVestibule.vue'
-import SceneHub from './components/SceneHub.vue'
-import SceneProject from './components/SceneProject.vue'
-import SceneContact from './components/SceneContact.vue'
-import PageProjects from './components/PageProjects.vue'
-import PageProfile from './components/PageProfile.vue'
+import SceneVestibule from '@/components/SceneVestibule.vue'
+import SceneHub from '@/components/SceneHub.vue'
+import SceneProject from '@/components/SceneProject.vue'
+import SceneContact from '@/components/SceneContact.vue'
+import PageProjects from '@/components/PageProjects.vue'
+import PageProfile from '@/components/PageProfile.vue'
 
 type Scene = 'vestibule' | 'hub' | 'project' | 'projects' | 'profile' | 'contact'
 
@@ -27,6 +27,8 @@ const sceneComponent = computed(() => {
       return PageProfile
     case 'contact':
       return SceneContact
+    default:
+      return SceneHub
   }
 
 })
@@ -64,7 +66,7 @@ const goToProfilePage = () => {
 
 <template>
   <div
-    class="min-h-svh bg-gradient-to-b from-slate-950 via-slate-950 to-black text-sky-50 overflow-hidden"
+    class="min-h-svh bg-linear-to-b from-slate-950 via-slate-950 to-black text-sky-50 overflow-hidden"
   >
     <main
       class="relative min-h-svh flex items-stretch justify-center px-4 py-6 md:px-8 md:py-10 lg:px-16"
