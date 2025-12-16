@@ -19,6 +19,12 @@
   ],
   "education": [
     {
+      "title": "Master Informatique — ILSEN",
+      "period": "2025 – 2027",
+      "place": "CERI Avignon",
+      "details": "Ingénierie du Logiciel de la Société Numérique"
+    },
+    {
       "title": "BUT Informatique — RACDV",
       "period": "2021 – 2025",
       "place": "IUT de Montpellier-Sète",
@@ -33,15 +39,21 @@
   ],
   "experiences": [
     {
+      "title": "Apprenti DevOps — CA-GIP",
+      "period": "Septembre 2025 – Août 2027",
+      "place": "Crédit Agricole Group Infrastructure Platform",
+      "details": "Développement et maintenance d'une application interne pour les équipes DevOps. Collaboration étroite avec les équipes Ops et montée en compétences sur les enjeux opérationnels."
+    },
+    {
       "title": "Stage Développeur Full-Stack — CA-GIP",
       "period": "Avril 2025 – Août 2025",
       "place": "Crédit Agricole Group Infrastructure Platform",
-      "details": "Mise en place d’une application sous Kubernetes pour automatiser et vérifier des informations pour les équipes DevOps."
+      "details": "Déploiement d’une solution conteneurisée sur Kubernetes assurant l'automatisation et l'audit des données pour les équipes DevOps."
     },
     {
       "title": "Stage Conception de process métier — Nexecur",
       "period": "Avril 2024 – Juin 2024",
-      "place": "",
+      "place": "Nexecur (Groupe Crédit Agricole)",
       "details": "Amélioration de l’organisation par la conception et la mise en œuvre de processus métiers automatisés."
     }
   ]
