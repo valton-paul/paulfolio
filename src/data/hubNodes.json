@@ -4,8 +4,8 @@
     "label": "Signal_01",
     "hint": "Interface expérimentale détectée",
     "kind": "project",
-    "x": 18,
-    "y": 26
+    "x": 86,
+    "y": 48
   },
   {
     "id": "mem-fragment",
@@ -44,8 +44,8 @@
     "label": "Profil_Fragmenté",
     "hint": "Notes de terrain, obsessions visuelles et trajectoire.",
     "kind": "profilePage",
-    "x": 86,
-    "y": 48
+    "x": 18,
+    "y": 26
   }
 ]
 
