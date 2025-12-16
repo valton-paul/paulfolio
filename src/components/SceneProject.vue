@@ -61,10 +61,10 @@ const projectBody = computed(() => {
       </header>
 
       <div
-        class="relative rounded-2xl bg-gradient-to-br from-slate-800/90 via-slate-950 to-black/95 shadow-[0_22px_80px_rgba(0,0,0,0.9)] overflow-hidden min-h-[200px] sm:min-h-[260px]"
+        class="relative rounded-2xl bg-linear-to-br from-slate-800/90 via-slate-950 to-black/95 shadow-[0_22px_80px_rgba(0,0,0,0.9)] overflow-hidden min-h-[200px] sm:min-h-[260px]"
       >
         <div
-          class="absolute inset-0 bg-[linear-gradient(rgba(148,163,184,0.16)_1px,transparent_1px),linear-gradient(90deg,rgba(148,163,184,0.16)_1px,transparent_1px)] bg-[size:40px_40px] opacity-50 mix-blend-soft-light"
+          class="absolute inset-0 bg-[linear-gradient(rgba(148,163,184,0.16)_1px,transparent_1px),linear-gradient(90deg,rgba(148,163,184,0.16)_1px,transparent_1px)] bg-size-[40px_40px] opacity-50 mix-blend-soft-light"
           aria-hidden="true"
         />
         <div
@@ -74,7 +74,7 @@ const projectBody = computed(() => {
 
         <div class="relative flex h-full items-center justify-center">
           <div
-            class="h-28 w-28 sm:h-32 sm:w-32 rounded-full bg-gradient-to-tr from-white via-sky-300 to-sky-500 shadow-[0_0_40px_rgba(56,189,248,0.9),0_0_90px_rgba(15,23,42,0.95)]"
+            class="h-28 w-28 sm:h-32 sm:w-32 rounded-full bg-linear-to-tr from-white via-sky-300 to-sky-500 shadow-[0_0_40px_rgba(56,189,248,0.9),0_0_90px_rgba(15,23,42,0.95)]"
           />
           <div
             class="absolute h-52 w-52 rounded-full border border-sky-300/60 border-dashed shadow-[0_0_26px_rgba(59,130,246,0.7)]"

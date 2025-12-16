@@ -111,10 +111,10 @@ const handleNodeClick = (node: Node) => {
             :key="i"
             class="absolute w-px h-px rounded-full animate-pulse transition-all duration-500"
             :class="{
-              'bg-sky-400/30': currentMode === 'exploration',
-              'bg-cyan-300/40': currentMode === 'analyse',
-              'bg-blue-300/25': currentMode === 'meditation',
-              'bg-slate-400/20': currentMode === 'minimal'
+              'bg-sky-400/40 shadow-[0_0_4px_rgba(56,189,248,0.8)]': currentMode === 'exploration',
+              'bg-cyan-300/50 shadow-[0_0_6px_rgba(34,211,238,1)]': currentMode === 'analyse',
+              'bg-indigo-300/35 shadow-[0_0_5px_rgba(99,102,241,0.9)]': currentMode === 'meditation',
+              'bg-slate-400/25 shadow-[0_0_3px_rgba(100,116,139,0.6)]': currentMode === 'minimal'
             }"
             :style="{
               left: `${Math.random() * 100}%`,
@@ -127,37 +127,37 @@ const handleNodeClick = (node: Node) => {
 
         <!-- Orbites concentriques mystiques -->
         <div
-          class="pointer-events-none absolute inset-12 rounded-full border transition-all duration-500"
+          class="pointer-events-none absolute inset-12 rounded-full border-2 transition-all duration-500"
           :class="{
-            'border-sky-500/5 animate-spin': currentMode !== 'minimal',
-            'border-sky-400/3': currentMode === 'analyse',
-            'border-blue-400/4': currentMode === 'meditation',
-            'border-slate-500/2': currentMode === 'minimal'
+            'border-sky-400/20 animate-spin shadow-[0_0_20px_rgba(56,189,248,0.3)]': currentMode === 'exploration',
+            'border-cyan-400/30 animate-spin shadow-[0_0_25px_rgba(34,211,238,0.4)]': currentMode === 'analyse',
+            'border-indigo-400/25 animate-spin shadow-[0_0_20px_rgba(99,102,241,0.3)]': currentMode === 'meditation',
+            'border-slate-500/10': currentMode === 'minimal'
           }"
           :style="{
-            animationDuration: currentConfig.orbitSpeed === 'fast' ? '60s' : currentConfig.orbitSpeed === 'slow' ? '300s' : '120s'
+            animationDuration: currentConfig.orbitSpeed === 'fast' ? '60s' : currentConfig.orbitSpeed === 'slow' ? '300s' : currentConfig.orbitSpeed === 'static' ? '999999s' : '120s'
           }"
         />
         <div
-          class="pointer-events-none absolute inset-20 rounded-full border transition-all duration-500"
+          class="pointer-events-none absolute inset-20 rounded-full border-2 transition-all duration-500"
           :class="{
-            'border-sky-400/3 animate-spin': currentMode !== 'minimal',
-            'border-cyan-400/4': currentMode === 'analyse',
-            'border-indigo-400/3': currentMode === 'meditation',
-            'border-slate-400/1': currentMode === 'minimal'
+            'border-sky-300/15 animate-spin shadow-[0_0_15px_rgba(56,189,248,0.2)]': currentMode === 'exploration',
+            'border-cyan-300/25 animate-spin shadow-[0_0_20px_rgba(34,211,238,0.3)]': currentMode === 'analyse',
+            'border-purple-400/20 animate-spin shadow-[0_0_15px_rgba(147,51,234,0.25)]': currentMode === 'meditation',
+            'border-slate-400/5': currentMode === 'minimal'
           }"
           :style="{
-            animationDuration: currentConfig.orbitSpeed === 'fast' ? '90s' : currentConfig.orbitSpeed === 'slow' ? '450s' : '180s',
+            animationDuration: currentConfig.orbitSpeed === 'fast' ? '90s' : currentConfig.orbitSpeed === 'slow' ? '450s' : currentConfig.orbitSpeed === 'static' ? '999999s' : '180s',
             animationDirection: 'reverse'
           }"
         />
         <div
           v-if="currentMode !== 'minimal'"
-          class="pointer-events-none absolute inset-32 rounded-full border transition-all duration-500"
+          class="pointer-events-none absolute inset-32 rounded-full border-2 transition-all duration-500"
           :class="{
-            'border-sky-300/2 animate-spin': true,
-            'border-cyan-300/3': currentMode === 'analyse',
-            'border-purple-400/2': currentMode === 'meditation'
+            'border-blue-400/10 animate-spin shadow-[0_0_10px_rgba(96,165,250,0.15)]': currentMode === 'exploration',
+            'border-emerald-400/20 animate-spin shadow-[0_0_15px_rgba(52,211,153,0.25)]': currentMode === 'analyse',
+            'border-violet-400/15 animate-spin shadow-[0_0_12px_rgba(139,92,246,0.2)]': currentMode === 'meditation'
           }"
           :style="{
             animationDuration: currentConfig.orbitSpeed === 'fast' ? '120s' : currentConfig.orbitSpeed === 'slow' ? '600s' : '240s'
@@ -167,12 +167,12 @@ const handleNodeClick = (node: Node) => {
         <!-- Lueur centrale mystique -->
         <div class="absolute inset-0 flex items-center justify-center" aria-hidden="true">
           <div
-            class="rounded-full bg-radial-gradient via-transparent blur-3xl transition-all duration-500"
+            class="rounded-full via-transparent blur-3xl transition-all duration-1000"
             :class="{
-              'w-96 h-96 from-sky-500/5': currentMode === 'exploration',
-              'w-[28rem] h-[28rem] from-cyan-400/8': currentMode === 'analyse',
-              'w-[32rem] h-[32rem] from-blue-500/6': currentMode === 'meditation',
-              'w-80 h-80 from-slate-400/3': currentMode === 'minimal'
+              'w-96 h-96 bg-radial-gradient from-sky-500/8 to-transparent shadow-[0_0_60px_rgba(56,189,248,0.3)]': currentMode === 'exploration',
+              'w-md h-112 bg-radial-gradient from-cyan-400/12 to-transparent shadow-[0_0_80px_rgba(34,211,238,0.4)]': currentMode === 'analyse',
+              'w-lg h-128 bg-radial-gradient from-indigo-500/10 to-transparent shadow-[0_0_70px_rgba(99,102,241,0.35)]': currentMode === 'meditation',
+              'w-80 h-80 bg-radial-gradient from-slate-400/4 to-transparent shadow-[0_0_40px_rgba(100,116,139,0.2)]': currentMode === 'minimal'
             }"
           />
         </div>
@@ -196,9 +196,9 @@ const handleNodeClick = (node: Node) => {
             class="absolute -inset-4 rounded-full opacity-0 group-hover:opacity-70 group-hover:animate-pulse transition-opacity duration-200 blur-sm"
             :class="{
               'bg-sky-400/30 shadow-[0_0_40px_rgba(56,189,248,0.9),0_0_80px_rgba(56,189,248,0.6)]': currentMode === 'exploration',
-              'bg-cyan-400/35 shadow-[0_0_45px_rgba(34,211,238,1),0_0_90px_rgba(34,211,238,0.7)]': currentMode === 'analyse',
-              'bg-indigo-400/30 shadow-[0_0_40px_rgba(99,102,241,0.9),0_0_80px_rgba(99,102,241,0.6)]': currentMode === 'meditation',
-              'bg-slate-400/25 shadow-[0_0_35px_rgba(100,116,139,0.8),0_0_70px_rgba(100,116,139,0.5)]': currentMode === 'minimal'
+              'bg-emerald-400/35 shadow-[0_0_45px_rgba(16,185,129,1),0_0_90px_rgba(16,185,129,0.7)]': currentMode === 'analyse',
+              'bg-violet-400/30 shadow-[0_0_40px_rgba(139,92,246,0.9),0_0_80px_rgba(139,92,246,0.6)]': currentMode === 'meditation',
+              'bg-amber-400/25 shadow-[0_0_35px_rgba(245,158,11,0.8),0_0_70px_rgba(245,158,11,0.5)]': currentMode === 'minimal'
             }"
             style="animation-duration: 1.5s;"
             aria-hidden="true"
@@ -207,9 +207,9 @@ const handleNodeClick = (node: Node) => {
             class="absolute -inset-6 rounded-full opacity-0 group-hover:opacity-50 group-hover:animate-pulse transition-opacity duration-200 blur-md"
             :class="{
               'bg-sky-300/20 shadow-[0_0_30px_rgba(56,189,248,0.7),0_0_60px_rgba(56,189,248,0.4)]': currentMode === 'exploration',
-              'bg-cyan-300/25 shadow-[0_0_35px_rgba(34,211,238,0.8),0_0_70px_rgba(34,211,238,0.5)]': currentMode === 'analyse',
-              'bg-indigo-300/20 shadow-[0_0_30px_rgba(99,102,241,0.7),0_0_60px_rgba(99,102,241,0.4)]': currentMode === 'meditation',
-              'bg-slate-300/15 shadow-[0_0_25px_rgba(100,116,139,0.6),0_0_50px_rgba(100,116,139,0.3)]': currentMode === 'minimal'
+              'bg-teal-300/25 shadow-[0_0_35px_rgba(20,184,166,0.8),0_0_70px_rgba(20,184,166,0.5)]': currentMode === 'analyse',
+              'bg-purple-300/20 shadow-[0_0_30px_rgba(147,51,234,0.7),0_0_60px_rgba(147,51,234,0.4)]': currentMode === 'meditation',
+              'bg-yellow-300/15 shadow-[0_0_25px_rgba(234,179,8,0.6),0_0_50px_rgba(234,179,8,0.3)]': currentMode === 'minimal'
             }"
             style="animation-delay: 0.2s; animation-duration: 2s;"
             aria-hidden="true"
@@ -218,9 +218,9 @@ const handleNodeClick = (node: Node) => {
             class="absolute -inset-8 rounded-full opacity-0 group-hover:opacity-30 group-hover:animate-pulse transition-opacity duration-200 blur-lg"
             :class="{
               'bg-sky-200/15 shadow-[0_0_20px_rgba(56,189,248,0.5),0_0_40px_rgba(56,189,248,0.2)]': currentMode === 'exploration',
-              'bg-cyan-200/20 shadow-[0_0_25px_rgba(34,211,238,0.6),0_0_50px_rgba(34,211,238,0.3)]': currentMode === 'analyse',
-              'bg-indigo-200/15 shadow-[0_0_20px_rgba(99,102,241,0.5),0_0_40px_rgba(99,102,241,0.2)]': currentMode === 'meditation',
-              'bg-slate-200/10 shadow-[0_0_15px_rgba(100,116,139,0.4),0_0_30px_rgba(100,116,139,0.15)]': currentMode === 'minimal'
+              'bg-cyan-200/20 shadow-[0_0_25px_rgba(6,182,212,0.6),0_0_50px_rgba(6,182,212,0.3)]': currentMode === 'analyse',
+              'bg-pink-200/15 shadow-[0_0_20px_rgba(236,72,153,0.5),0_0_40px_rgba(236,72,153,0.2)]': currentMode === 'meditation',
+              'bg-orange-200/10 shadow-[0_0_15px_rgba(249,115,22,0.4),0_0_30px_rgba(249,115,22,0.15)]': currentMode === 'minimal'
             }"
             style="animation-delay: 0.4s; animation-duration: 2.5s;"
             aria-hidden="true"
@@ -232,11 +232,11 @@ const handleNodeClick = (node: Node) => {
             :class="{
               'bg-linear-to-tr from-cyan-200 via-sky-400 to-blue-500 shadow-[0_0_28px_rgba(56,189,248,0.8),0_0_50px_rgba(15,23,42,0.9),inset_0_1px_2px_rgba(255,255,255,0.3)] group-hover:shadow-[0_0_45px_rgba(56,189,248,1.2),0_0_80px_rgba(15,23,42,1.1),inset_0_1px_2px_rgba(255,255,255,0.6)]':
                 currentMode === 'exploration',
-              'bg-linear-to-tr from-cyan-100 via-cyan-300 to-blue-400 shadow-[0_0_35px_rgba(34,211,238,1),0_0_65px_rgba(15,23,42,1),inset_0_1px_2px_rgba(255,255,255,0.4)] group-hover:shadow-[0_0_55px_rgba(34,211,238,1.5),0_0_100px_rgba(15,23,42,1.3),inset_0_1px_2px_rgba(255,255,255,0.8)]':
+              'bg-linear-to-tr from-emerald-200 via-cyan-300 to-teal-400 shadow-[0_0_35px_rgba(20,184,166,1),0_0_65px_rgba(15,23,42,1),inset_0_1px_2px_rgba(255,255,255,0.4)] group-hover:shadow-[0_0_55px_rgba(20,184,166,1.5),0_0_100px_rgba(15,23,42,1.3),inset_0_1px_2px_rgba(255,255,255,0.8)]':
                 currentMode === 'analyse',
-              'bg-linear-to-tr from-blue-200 via-indigo-400 to-purple-500 shadow-[0_0_25px_rgba(99,102,241,0.7),0_0_45px_rgba(15,23,42,0.8),inset_0_1px_2px_rgba(255,255,255,0.2)] group-hover:shadow-[0_0_40px_rgba(99,102,241,1),0_0_75px_rgba(15,23,42,1),inset_0_1px_2px_rgba(255,255,255,0.5)]':
+              'bg-linear-to-tr from-violet-300 via-purple-400 to-pink-500 shadow-[0_0_25px_rgba(147,51,234,0.8),0_0_45px_rgba(15,23,42,0.8),inset_0_1px_2px_rgba(255,255,255,0.25)] group-hover:shadow-[0_0_40px_rgba(147,51,234,1.2),0_0_75px_rgba(15,23,42,1),inset_0_1px_2px_rgba(255,255,255,0.6)]':
                 currentMode === 'meditation',
-              'bg-linear-to-tr from-slate-300 via-slate-400 to-slate-500 shadow-[0_0_15px_rgba(100,116,139,0.6),0_0_30px_rgba(15,23,42,0.7),inset_0_1px_2px_rgba(255,255,255,0.1)] group-hover:shadow-[0_0_25px_rgba(100,116,139,0.9),0_0_50px_rgba(15,23,42,0.9),inset_0_1px_2px_rgba(255,255,255,0.3)]':
+              'bg-linear-to-tr from-amber-200 via-yellow-300 to-orange-400 shadow-[0_0_15px_rgba(251,191,36,0.7),0_0_30px_rgba(15,23,42,0.7),inset_0_1px_2px_rgba(255,255,255,0.2)] group-hover:shadow-[0_0_25px_rgba(251,191,36,1),0_0_50px_rgba(15,23,42,0.9),inset_0_1px_2px_rgba(255,255,255,0.4)]':
                 currentMode === 'minimal'
             }"
           />
@@ -254,9 +254,9 @@ const handleNodeClick = (node: Node) => {
             class="relative font-mono text-[0.7rem] uppercase mt-1 opacity-70 group-hover:opacity-100 transition-all duration-500 group-hover:tracking-[0.28em] group-hover:font-semibold"
             :class="{
               'tracking-[0.22em] text-slate-300 group-hover:text-sky-200': currentMode === 'exploration',
-              'tracking-[0.24em] text-cyan-300 group-hover:text-cyan-100': currentMode === 'analyse',
-              'tracking-[0.20em] text-indigo-300 group-hover:text-indigo-200': currentMode === 'meditation',
-              'tracking-[0.18em] text-slate-400 group-hover:text-slate-200': currentMode === 'minimal'
+              'tracking-[0.24em] text-emerald-300 group-hover:text-teal-100': currentMode === 'analyse',
+              'tracking-[0.20em] text-violet-300 group-hover:text-purple-200': currentMode === 'meditation',
+              'tracking-[0.18em] text-amber-300 group-hover:text-yellow-200': currentMode === 'minimal'
             }"
           >
             {{ node.label }}

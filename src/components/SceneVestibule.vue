@@ -50,12 +50,12 @@ const clearTimer = () => {
       </p>
 
       <button
-        class="inline-flex items-center gap-3 rounded-full border border-sky-400/50 bg-gradient-to-r from-sky-500/20 via-sky-400/10 to-transparent px-3.5 pr-4 py-2 text-[0.7rem] tracking-[0.22em] uppercase text-sky-100 shadow-[0_0_24px_rgba(56,189,248,0.4)] hover:border-sky-300/90 hover:shadow-[0_0_32px_rgba(56,189,248,0.8)] active:translate-y-px transition"
+        class="inline-flex items-center gap-3 rounded-full border border-sky-400/50 bg-linear-to-r from-sky-500/20 via-sky-400/10 to-transparent px-3.5 pr-4 py-2 text-[0.7rem] tracking-[0.22em] uppercase text-sky-100 shadow-[0_0_24px_rgba(56,189,248,0.4)] hover:border-sky-300/90 hover:shadow-[0_0_32px_rgba(56,189,248,0.8)] active:translate-y-px transition"
         type="button"
         @pointerdown="handlePointerDown"
       >
         <span
-          class="relative inline-flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-gradient-to-tr from-white via-sky-300 to-sky-500 shadow-[0_0_18px_rgba(56,189,248,0.95)]"
+          class="relative inline-flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-linear-to-tr from-white via-sky-300 to-sky-500 shadow-[0_0_18px_rgba(56,189,248,0.95)]"
           aria-hidden="true"
         >
           <span class="absolute inset-0 rounded-full border border-white/40 opacity-60" />

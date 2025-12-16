@@ -9,7 +9,7 @@ const emit = defineEmits<{
     class="relative flex flex-1 items-center justify-center px-3 py-6 sm:px-4 md:px-8 md:py-8"
   >
     <div
-      class="w-full max-w-xl rounded-3xl bg-gradient-to-b from-slate-900/95 via-slate-950 to-black/95 px-4 py-5 sm:px-6 sm:py-6 md:px-8 md:py-7 shadow-[0_22px_80px_rgba(0,0,0,0.9)]"
+      class="w-full max-w-xl rounded-3xl bg-linear-to-b from-slate-900/95 via-slate-950 to-black/95 px-4 py-5 sm:px-6 sm:py-6 md:px-8 md:py-7 shadow-[0_22px_80px_rgba(0,0,0,0.9)]"
     >
       <header class="space-y-2 mb-5">
         <p class="text-[0.7rem] tracking-[0.32em] uppercase text-slate-400">
@@ -56,7 +56,7 @@ const emit = defineEmits<{
           </button>
 
           <button
-            class="inline-flex items-center gap-2 rounded-full border border-sky-400/85 bg-gradient-to-r from-sky-500/30 via-sky-500/20 to-transparent px-4 py-1.5 text-[0.78rem] uppercase tracking-[0.22em] text-sky-50 shadow-[0_0_28px_rgba(56,189,248,0.75)] hover:border-sky-200 hover:shadow-[0_0_38px_rgba(56,189,248,0.9)] active:translate-y-px transition"
+            class="inline-flex items-center gap-2 rounded-full border border-sky-400/85 bg-linear-to-r from-sky-500/30 via-sky-500/20 to-transparent px-4 py-1.5 text-[0.78rem] uppercase tracking-[0.22em] text-sky-50 shadow-[0_0_28px_rgba(56,189,248,0.75)] hover:border-sky-200 hover:shadow-[0_0_38px_rgba(56,189,248,0.9)] active:translate-y-px transition"
             type="submit"
           >
             <span

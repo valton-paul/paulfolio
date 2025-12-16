@@ -47,7 +47,7 @@ const openProject = (id: string) => {
         @click="openProject(project.id)"
       >
         <div
-          class="pointer-events-none absolute inset-px rounded-2xl bg-gradient-to-br from-sky-500/15 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition"
+          class="pointer-events-none absolute inset-px rounded-2xl bg-linear-to-br from-sky-500/15 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition"
         />
 
         <p
@@ -75,7 +75,7 @@ const openProject = (id: string) => {
         <span
           class="relative mt-3 inline-flex items-center gap-1 text-[0.7rem] uppercase tracking-[0.2em] text-sky-300/90"
         >
-          <span class="h-[1px] w-4 bg-sky-400/60" />
+          <span class="h-px w-4 bg-sky-400/60" />
           ouvrir le dossier
         </span>
       </button>
