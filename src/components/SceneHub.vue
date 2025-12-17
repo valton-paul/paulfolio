@@ -6,6 +6,7 @@ const emit = defineEmits<{
   (e: 'open-project', id: string): void
   (e: 'open-projects-page'): void
   (e: 'open-profile-page'): void
+  (e: 'open-memory-page'): void
   (e: 'open-contact'): void
 }>()
 
@@ -14,13 +15,14 @@ type Node = (typeof nodes)[number]
 type ExplorationMode = 'exploration' | 'analyse' | 'meditation' | 'minimal'
 
 const currentMode = ref<ExplorationMode>('exploration')
+const trollEffect = ref(false)
 
 const modeConfig = {
   exploration: {
     label: 'mode exploration',
     description: 'fragments en suspens',
     gridOpacity: 0.6,
-    particlesCount: 12,
+    particlesCount: 200,
     orbitSpeed: 'normal',
     nodeGlow: 'normal',
     ambiance: 'mysterious'
@@ -29,7 +31,7 @@ const modeConfig = {
     label: 'mode analyse',
     description: 'système scanné',
     gridOpacity: 1,
-    particlesCount: 20,
+    particlesCount: 50,
     orbitSpeed: 'fast',
     nodeGlow: 'bright',
     ambiance: 'technical'
@@ -38,7 +40,7 @@ const modeConfig = {
     label: 'mode méditation',
     description: 'harmonie numérique',
     gridOpacity: 0.3,
-    particlesCount: 8,
+    particlesCount: 50,
     orbitSpeed: 'slow',
     nodeGlow: 'soft',
     ambiance: 'calm'
@@ -47,7 +49,7 @@ const modeConfig = {
     label: 'mode minimal',
     description: 'essence pure',
     gridOpacity: 0.2,
-    particlesCount: 3,
+    particlesCount: 25,
     orbitSpeed: 'static',
     nodeGlow: 'subtle',
     ambiance: 'pure'
@@ -64,12 +66,22 @@ const cycleMode = () => {
 }
 
 const handleNodeClick = (node: Node) => {
+  if (node.troll) {
+    trollEffect.value = true
+    setTimeout(() => {
+      trollEffect.value = false
+    }, 800)
+    return
+  }
+
   if (node.kind === 'project') {
     emit('open-project', node.id)
   } else if (node.kind === 'projectsPage') {
     emit('open-projects-page')
-  } else if (node.kind === 'profilePage') {
+  } else   if (node.kind === 'profilePage') {
     emit('open-profile-page')
+  } else if (node.kind === 'memoryPage') {
+    emit('open-memory-page')
   } else if (node.kind === 'gateway') {
     emit('open-contact')
   }
@@ -93,7 +105,8 @@ const handleNodeClick = (node: Node) => {
     </header>
 
     <div
-      class="relative flex-1 mx-2 sm:mx-4 rounded-3xl bg-linear-to-br from-slate-900/90 via-slate-950 to-black/95 shadow-[0_22px_80px_rgba(0,0,0,0.85)] overflow-hidden"
+      class="relative flex-1 mx-2 sm:mx-4 rounded-3xl shadow-[0_22px_80px_rgba(0,0,0,0.85)] overflow-hidden transition-all duration-300"
+      :class="trollEffect ? 'bg-red-900/60' : 'bg-linear-to-br from-slate-900/90 via-slate-950 to-black/95'"
     >
       <!-- Fond mystique avec particules flottantes -->
       <div class="absolute inset-0">

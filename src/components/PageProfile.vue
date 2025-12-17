@@ -60,7 +60,7 @@ const emit = defineEmits<{
       </div>
 
       <!-- Nœuds Périphériques Connectés -->
-      <!-- À propos - Bas gauche (devient haut gauche) -->
+      <!-- À propos - Haut gauche -->
       <div class="relative md:col-start-1 md:row-start-1 md:place-self-center group w-full md:w-auto">
 
         <div class="w-full max-w-sm md:w-64 mx-auto md:mx-0 rounded-lg border border-amber-500/30 bg-linear-to-br from-slate-900/95 via-slate-950 to-black/98 p-3 md:p-4 backdrop-blur-sm shadow-[0_8px_32px_rgba(251,191,36,0.2)] hover:shadow-[0_12px_48px_rgba(251,191,36,0.4)] transition-all duration-500 md:max-h-none overflow-visible">

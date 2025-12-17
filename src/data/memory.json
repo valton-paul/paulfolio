@@ -1,0 +1,74 @@
+[
+  {
+    "id": "bac",
+    "year": "2021",
+    "title": "Premiers Pas en STI2D",
+    "description": "Découverte des bases de l'informatique et de l'électronique. Premiers programmes en Python et Arduino.",
+    "category": "formation",
+    "icon": "●"
+  },
+  {
+    "id": "but-admission",
+    "year": "2021",
+    "title": "Admission en BUT Informatique",
+    "description": "Début du parcours universitaire avec une spécialisation en Réalisation d'Applications.",
+    "category": "formation",
+    "icon": "○"
+  },
+  {
+    "id": "first-web",
+    "year": "2022",
+    "title": "Première Application Web",
+    "description": "Création de ma première application web avec HTML/CSS/JS. Découverte du front-end et des bases de l'interaction utilisateur.",
+    "category": "project",
+    "icon": "◆"
+  },
+  {
+    "id": "php-symfony",
+    "year": "2023",
+    "title": "Plongée dans PHP & Symfony",
+    "description": "Apprentissage du développement back-end avec PHP et découverte du framework Symfony. Compréhension des architectures MVC.",
+    "category": "skill",
+    "icon": "◇"
+  },
+  {
+    "id": "stage-nexecur",
+    "year": "2024",
+    "title": "Stage chez Nexecur",
+    "description": "Première expérience professionnelle : amélioration des processus métier et automatisation de workflows.",
+    "category": "experience",
+    "icon": "□"
+  },
+  {
+    "id": "vue-react",
+    "year": "2024",
+    "title": "Maîtrise des Frameworks Front-end",
+    "description": "Apprentissage approfondi de Vue.js et React. Découverte des concepts modernes : composants, state management, routing.",
+    "category": "skill",
+    "icon": "△"
+  },
+  {
+    "id": "kubernetes-stage",
+    "year": "2025",
+    "title": "Déploiement sur Kubernetes",
+    "description": "Stage chez Crédit Agricole Group Infrastructure Platform : déploiement d'applications conteneurisées.",
+    "category": "experience",
+    "icon": "▽"
+  },
+  {
+    "id": "master-transition",
+    "year": "2025",
+    "title": "Transition vers Master ILSEN",
+    "description": "Admission en Master Ingénierie du Logiciel de la Société Numérique. Spécialisation en cybersécurité et DevOps.",
+    "category": "formation",
+    "icon": "⬡"
+  },
+  {
+    "id": "reflection-future",
+    "year": "2025",
+    "title": "Vision du Développement Future",
+    "description": "Réflexion sur l'évolution du web : IA, edge computing, Web3. Envie de contribuer à des projets ayant un impact sociétal.",
+    "category": "reflection",
+    "icon": "⬢"
+  }
+]

@@ -4,6 +4,7 @@
     "label": "Signal_01",
     "hint": "Interface expérimentale détectée",
     "kind": "project",
+    "troll": true,
     "x": 86,
     "y": 48
   },
@@ -11,7 +12,7 @@
     "id": "mem-fragment",
     "label": "Mémoire_∆",
     "hint": "« Je construis des interfaces comme on écrit des rêves. »",
-    "kind": "fragment",
+    "kind": "memoryPage",
     "x": 58,
     "y": 40
   },
@@ -28,6 +29,7 @@
     "label": "Sujet_03",
     "hint": "Prototype en dérive / creative dev",
     "kind": "project",
+    "troll": true,
     "x": 32,
     "y": 62
   },

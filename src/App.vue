@@ -7,8 +7,9 @@ import SceneProject from '@/components/SceneProject.vue'
 import SceneContact from '@/components/SceneContact.vue'
 import PageProjects from '@/components/PageProjects.vue'
 import PageProfile from '@/components/PageProfile.vue'
+import MemoryPage from '@/components/MemoryPage.vue'
 
-type Scene = 'vestibule' | 'hub' | 'project' | 'projects' | 'profile' | 'contact'
+type Scene = 'vestibule' | 'hub' | 'project' | 'projects' | 'profile' | 'memory' | 'contact'
 
 const currentScene = ref<Scene>('vestibule')
 const activeProjectId = ref<string | null>(null)
@@ -25,6 +26,8 @@ const sceneComponent = computed(() => {
       return PageProjects
     case 'profile':
       return PageProfile
+    case 'memory':
+      return MemoryPage
     case 'contact':
       return SceneContact
     default:
@@ -62,6 +65,10 @@ const goToProjectsPage = () => {
 const goToProfilePage = () => {
   currentScene.value = 'profile'
 }
+
+const goToMemoryPage = () => {
+  currentScene.value = 'memory'
+}
 </script>
 
 <template>
@@ -80,6 +87,7 @@ const goToProfilePage = () => {
           @open-project="openProject"
           @open-projects-page="goToProjectsPage"
           @open-profile-page="goToProfilePage"
+          @open-memory-page="goToMemoryPage"
           @close-project="closeProject"
           @open-contact="openContact"
           @exit-contact="exitContact"
