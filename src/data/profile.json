@@ -3,19 +3,18 @@
   "title": "Full Stack Developer",
   "location": "Montpellier",
   "headline": "Creative developer & designer narratif.",
-  "about": "Étudiant en 3ᵉ année de BUT Informatique (RACDV), je combine développement full stack, rigueur technique et envie de raconter des choses à travers les interfaces.",
+  "about": "Étudiant en 1ère année de Master Informatique (ILSEN). Curieux et déterminé, j’explore différents domaines de l’informatique, du développement applicatif à l’architecture logicielle, afin de continuer à apprendre et progresser.",
   "aboutSecondary": "Mon terrain de jeu va du back au front, mais avec une obsession particulière pour l’ergonomie, la qualité de code et les expériences web qui sortent du cadre.",
   "coordinates": "Basé à Montpellier · Français natif, Anglais B1.",
   "skills": [
-    "Typescript",
-    "Symfony",
-    "Next.js",
-    "Docker",
-    "MySQL",
-    "Git",
-    "Qualité de code",
-    "Agile",
-    "Autonomie & communication"
+    "Développement Full-Stack",
+    "Architecture & Design Patterns",
+    "Containerisation & Orchestration",
+    "Bases de données & APIs",
+    "CI/CD & DevOps",
+    "Qualité & Testing",
+    "Méthodologies Agiles",
+    "Communication & Travail d'équipe"
   ],
   "education": [
     {

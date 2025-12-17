@@ -63,7 +63,7 @@ const emit = defineEmits<{
       <!-- À propos - Haut gauche -->
       <div class="relative md:col-start-1 md:row-start-1 md:place-self-center group w-full md:w-auto">
 
-        <div class="w-full max-w-sm md:w-64 mx-auto md:mx-0 rounded-lg border border-amber-500/30 bg-linear-to-br from-slate-900/95 via-slate-950 to-black/98 p-3 md:p-4 backdrop-blur-sm shadow-[0_8px_32px_rgba(251,191,36,0.2)] hover:shadow-[0_12px_48px_rgba(251,191,36,0.4)] transition-all duration-500 md:max-h-none overflow-visible">
+        <div class="w-full max-w-sm md:w-80 mx-auto md:mx-0 rounded-lg border border-amber-500/30 bg-linear-to-br from-slate-900/95 via-slate-950 to-black/98 p-3 md:p-4 backdrop-blur-sm shadow-[0_8px_32px_rgba(251,191,36,0.2)] hover:shadow-[0_12px_48px_rgba(251,191,36,0.4)] transition-all duration-500 md:max-h-none overflow-visible">
           <h3 class="text-sm md:text-sm uppercase tracking-[0.28em] text-amber-400/90 mb-3 flex items-center gap-2">
             <div class="w-2 h-2 rounded-full bg-amber-400/70 animate-pulse"></div>
             identité neuronale
@@ -81,7 +81,7 @@ const emit = defineEmits<{
       <!-- Parcours Académique - Haut droite -->
       <div class="relative md:col-start-3 md:row-start-1 md:place-self-center group w-full md:w-auto">
 
-        <div class="w-full max-w-sm md:w-64 mx-auto md:mx-0 rounded-lg border border-emerald-500/30 bg-linear-to-br from-slate-900/95 via-slate-950 to-black/98 p-3 md:p-4 backdrop-blur-sm shadow-[0_8px_32px_rgba(34,197,94,0.2)] hover:shadow-[0_12px_48px_rgba(34,197,94,0.4)] transition-all duration-500 md:max-h-none overflow-visible">
+        <div class="w-full max-w-sm md:w-80 mx-auto md:mx-0 rounded-lg border border-emerald-500/30 bg-linear-to-br from-slate-900/95 via-slate-950 to-black/98 p-3 md:p-4 backdrop-blur-sm shadow-[0_8px_32px_rgba(34,197,94,0.2)] hover:shadow-[0_12px_48px_rgba(34,197,94,0.4)] transition-all duration-500 md:max-h-none overflow-visible">
           <h3 class="text-sm md:text-sm uppercase tracking-[0.28em] text-emerald-400/90 mb-3 flex items-center gap-2">
             <div class="w-2 h-2 rounded-full bg-emerald-400/70 animate-pulse"></div>
             dendrites académiques
@@ -98,7 +98,7 @@ const emit = defineEmits<{
       <!-- Expériences - Bas droite -->
       <div class="relative md:col-start-3 md:row-start-3 md:place-self-center group w-full md:w-auto">
 
-        <div class="w-full max-w-sm md:w-64 mx-auto md:mx-0 rounded-lg border border-violet-500/30 bg-linear-to-br from-slate-900/95 via-slate-950 to-black/98 p-3 md:p-4 backdrop-blur-sm shadow-[0_8px_32px_rgba(168,85,247,0.2)] hover:shadow-[0_12px_48px_rgba(168,85,247,0.4)] transition-all duration-500 md:max-h-none overflow-visible">
+        <div class="w-full max-w-sm md:w-80 mx-auto md:mx-0 rounded-lg border border-violet-500/30 bg-linear-to-br from-slate-900/95 via-slate-950 to-black/98 p-3 md:p-4 backdrop-blur-sm shadow-[0_8px_32px_rgba(168,85,247,0.2)] hover:shadow-[0_12px_48px_rgba(168,85,247,0.4)] transition-all duration-500 md:max-h-none overflow-visible">
           <h3 class="text-sm md:text-sm uppercase tracking-[0.28em] text-violet-400/90 mb-3 flex items-center gap-2">
             <div class="w-2 h-2 rounded-full bg-violet-400/70 animate-pulse"></div>
             axones expériences
@@ -115,7 +115,7 @@ const emit = defineEmits<{
       <!-- Compétences - Bas gauche -->
       <div class="relative md:col-start-1 md:row-start-3 md:place-self-center group w-full md:w-auto">
 
-        <div class="w-full max-w-sm md:w-64 mx-auto md:mx-0 rounded-lg border border-cyan-500/30 bg-linear-to-br from-slate-900/95 via-slate-950 to-black/98 p-3 md:p-4 backdrop-blur-sm shadow-[0_8px_32px_rgba(34,211,238,0.2)] hover:shadow-[0_12px_48px_rgba(34,211,238,0.4)] transition-all duration-500 md:max-h-none overflow-visible">
+        <div class="w-full max-w-sm md:w-80 mx-auto md:mx-0 rounded-lg border border-cyan-500/30 bg-linear-to-br from-slate-900/95 via-slate-950 to-black/98 p-3 md:p-4 backdrop-blur-sm shadow-[0_8px_32px_rgba(34,211,238,0.2)] hover:shadow-[0_12px_48px_rgba(34,211,238,0.4)] transition-all duration-500 md:max-h-none overflow-visible">
           <h3 class="text-sm md:text-sm uppercase tracking-[0.28em] text-cyan-400/90 mb-3 flex items-center gap-2">
             <div class="w-2 h-2 rounded-full bg-cyan-400/70 animate-pulse"></div>
             synapses compétences

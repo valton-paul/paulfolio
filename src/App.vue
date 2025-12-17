@@ -58,6 +58,10 @@ const exitContact = () => {
   currentScene.value = 'hub'
 }
 
+const exitMemory = () => {
+  currentScene.value = 'hub'
+}
+
 const goToProjectsPage = () => {
   currentScene.value = 'projects'
 }
@@ -88,6 +92,7 @@ const goToMemoryPage = () => {
           @open-projects-page="goToProjectsPage"
           @open-profile-page="goToProfilePage"
           @open-memory-page="goToMemoryPage"
+          @exit-memory="exitMemory"
           @close-project="closeProject"
           @open-contact="openContact"
           @exit-contact="exitContact"

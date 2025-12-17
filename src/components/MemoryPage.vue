@@ -91,7 +91,9 @@ const categoryLabels = {
                 ]"
               >
                 <div class="flex items-start gap-3">
-                  <div class="text-2xl shrink-0 font-bold text-cyan-400 bg-cyan-950/30 px-2 py-1 rounded border border-cyan-500/30 flex items-center justify-center w-8 h-8">{{ event.icon }}</div>
+                  <div class="text-2xl shrink-0 font-bold text-cyan-400 bg-cyan-950/30 px-2 py-1 rounded border border-cyan-500/30 flex items-center justify-center">
+                    {{ event.icon }}
+                  </div>
                   <div class="flex-1">
                     <div class="flex items-center gap-2 mb-2">
                       <span class="text-xs font-mono px-2 py-1 rounded bg-slate-800/50 text-cyan-300">
