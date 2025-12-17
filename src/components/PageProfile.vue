@@ -23,7 +23,7 @@ const emit = defineEmits<{
     </div>
 
     <!-- Interface "Réseau Neural" -->
-    <div class="relative min-h-[400px] md:min-h-0 flex flex-col md:grid md:grid-cols-3 md:grid-rows-[auto_1fr_auto] items-start justify-start gap-6 md:gap-2">
+    <div class="relative min-h-[400px] md:min-h-0 flex flex-col md:grid md:grid-cols-3 md:grid-rows-[auto_1fr_auto] items-start justify-start gap-12 md:gap-2">
       <!-- Nœud Central (Identité) -->
       <div class="relative mx-auto md:col-start-2 md:row-start-2 md:place-self-center z-10 md:z-10">
         <div class="relative group">
@@ -36,17 +36,17 @@ const emit = defineEmits<{
             <!-- Géométrie cristalline animée -->
             <div class="relative w-full h-full flex items-center justify-center">
               <!-- Hexagone central -->
-              <div class="absolute inset-0 flex items-center justify-center">
+              <div class="absolute inset-0 flex items-center justify-center animate-spin" style="animation-duration: 30s;">
                 <div class="w-20 h-20 md:w-24 md:h-24 rotate-45 border border-cyan-300/50 bg-linear-to-br from-cyan-400/20 to-transparent backdrop-blur-sm"></div>
               </div>
 
               <!-- Anneaux orbitaux -->
-              <div class="absolute inset-1 md:inset-2 rounded-full border border-sky-400/30 animate-spin" style="animation-duration: 20s;"></div>
-              <div class="absolute inset-3 md:inset-6 rounded-full border border-cyan-300/40 animate-spin" style="animation-duration: 15s; animation-direction: reverse;"></div>
-              <div class="absolute inset-5 md:inset-10 rounded-full border border-sky-200/30 animate-spin" style="animation-duration: 25s;"></div>
+              <div class="absolute inset-1 md:inset-2 rounded-full border border-sky-400/30 animate-ping" style="animation-duration: 6s; animation-delay: 2s;"></div>
+              <div class="absolute inset-3 md:inset-6 rounded-full border border-cyan-300/40 animate-ping" style="animation-duration: 6s; animation-delay: 4s;"></div>
+              <div class="absolute inset-5 md:inset-10 rounded-full border border-sky-200/30 animate-ping" style="animation-duration: 6s;"></div>
 
               <!-- Noyau lumineux interne -->
-              <div class="relative z-10 w-6 h-6 md:w-10 md:h-10 rounded-full bg-linear-to-tr from-white/30 via-cyan-200/40 to-sky-300/30 shadow-[0_0_20px_rgba(34,211,238,0.8)] animate-pulse"></div>
+              <div class="relative z-10 w-6 h-6 md:w-10 md:h-10 rounded-full bg-linear-to-tr from-white/80 via-cyan-200/40 to-sky-300/30 shadow-[0_0_20px_rgba(34,211,238,0.8)] animate-pulse"></div>
 
               <!-- Données centrales -->
               <div class="absolute inset-0 flex flex-col items-center justify-center text-center z-20">
