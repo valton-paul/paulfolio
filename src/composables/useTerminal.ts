@@ -69,7 +69,7 @@ export function useTerminal() {
     },
     'git blame': () => {
       trophy(3)
-      const joke = blameJokes[blameIndex % blameJokes.length] ?? blameJokes[0]
+      const joke = blameJokes[blameIndex % blameJokes.length] ?? 'git blame : rien à signaler.'
       blameIndex += 1
       return joke
     },
