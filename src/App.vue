@@ -1,116 +1,41 @@
 <script setup lang="ts">
-import { computed, ref } from 'vue'
+import { onMounted } from 'vue'
 
-import SceneVestibule from '@/components/SceneVestibule.vue'
-import SceneHub from '@/components/SceneHub.vue'
-import SceneProject from '@/components/SceneProject.vue'
-import SceneContact from '@/components/SceneContact.vue'
-import PageProjects from '@/components/PageProjects.vue'
-import PageProfile from '@/components/PageProfile.vue'
-import MemoryPage from '@/components/MemoryPage.vue'
+import AppFooter from '@/components/AppFooter.vue'
+import AppHeader from '@/components/AppHeader.vue'
+import ConfettiLayer from '@/components/ConfettiLayer.vue'
+import HeroSection from '@/components/HeroSection.vue'
+import LogPanel from '@/components/LogPanel.vue'
+import OutputPanel from '@/components/OutputPanel.vue'
+import PipelineBoard from '@/components/PipelineBoard.vue'
+import ProgressBar from '@/components/ProgressBar.vue'
+import TerminalPanel from '@/components/TerminalPanel.vue'
+import TrophyBar from '@/components/TrophyBar.vue'
+import { useFolio } from '@/composables/useFolio'
+import { useKonami } from '@/composables/useKonami'
+import { useTheme } from '@/composables/useTheme'
 
-type Scene = 'vestibule' | 'hub' | 'project' | 'projects' | 'profile' | 'memory' | 'contact'
+const { pipelineYear } = useFolio()
 
-const currentScene = ref<Scene>('vestibule')
-const activeProjectId = ref<string | null>(null)
+useTheme()
+useKonami()
 
-const sceneComponent = computed(() => {
-  switch (currentScene.value) {
-    case 'vestibule':
-      return SceneVestibule
-    case 'hub':
-      return SceneHub
-    case 'project':
-      return SceneProject
-    case 'projects':
-      return PageProjects
-    case 'profile':
-      return PageProfile
-    case 'memory':
-      return MemoryPage
-    case 'contact':
-      return SceneContact
-    default:
-      return SceneHub
-  }
-
+onMounted(() => {
+  document.title = `myPaulFolio — Pipeline #${pipelineYear}`
 })
-
-const goToHub = () => {
-  currentScene.value = 'hub'
-}
-
-const openProject = (id: string) => {
-  activeProjectId.value = id
-  currentScene.value = 'project'
-}
-
-const closeProject = () => {
-  activeProjectId.value = null
-  currentScene.value = 'hub'
-}
-
-const openContact = () => {
-  currentScene.value = 'contact'
-}
-
-const exitContact = () => {
-  currentScene.value = 'hub'
-}
-
-const exitMemory = () => {
-  currentScene.value = 'hub'
-}
-
-const goToProjectsPage = () => {
-  currentScene.value = 'projects'
-}
-
-const goToProfilePage = () => {
-  currentScene.value = 'profile'
-}
-
-const goToMemoryPage = () => {
-  currentScene.value = 'memory'
-}
 </script>
 
 <template>
-  <div
-    class="min-h-svh bg-linear-to-b from-slate-950 via-slate-950 to-black text-sky-50 overflow-hidden"
-  >
-    <main
-      class="relative min-h-svh flex items-stretch justify-center px-4 py-6 md:px-8 md:py-10 lg:px-16"
-    >
-      <Transition name="scene-fade" mode="out-in">
-        <component
-          :is="sceneComponent"
-          :key="currentScene"
-          :active-project-id="activeProjectId"
-          @enter-hub="goToHub"
-          @open-project="openProject"
-          @open-projects-page="goToProjectsPage"
-          @open-profile-page="goToProfilePage"
-          @open-memory-page="goToMemoryPage"
-          @exit-memory="exitMemory"
-          @close-project="closeProject"
-          @open-contact="openContact"
-          @exit-contact="exitContact"
-        />
-      </Transition>
-    </main>
-  </div>
+  <main class="folio">
+    <AppHeader />
+    <HeroSection />
+    <PipelineBoard />
+    <ProgressBar />
+    <TrophyBar />
+    <LogPanel />
+    <OutputPanel />
+    <TerminalPanel />
+    <AppFooter />
+  </main>
+  <ConfettiLayer />
 </template>
-
-<style>
-.scene-fade-enter-active,
-.scene-fade-leave-active {
-  transition: opacity 250ms ease, transform 260ms ease;
-}
-
-.scene-fade-enter-from,
-.scene-fade-leave-to {
-  opacity: 0;
-  transform: scale(0.98) translateY(4px);
-}
-</style>
