@@ -19,4 +19,4 @@ Allow: /
 User-agent: PerplexityBot
 Allow: /
 
-Sitemap: https://wemio.fr/sitemap.xml
+Sitemap: https://mypaulfolio.vercel.app/sitemap.xml

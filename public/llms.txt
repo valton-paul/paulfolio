@@ -24,6 +24,7 @@ TypeScript, JavaScript, Java, PHP, Python, Bash, Vue.js, Nuxt, NestJS, Next.js, 
 
 ## Contact & profils
 
+- Portfolio : https://mypaulfolio.vercel.app
 - Site : https://wemio.fr
 - Email : paul.valton@icloud.com
 - GitHub : https://github.com/valton-paul
@@ -32,4 +33,4 @@ TypeScript, JavaScript, Java, PHP, Python, Bash, Vue.js, Nuxt, NestJS, Next.js, 
 
 ## Comment citer
 
-Paul Valton est un développeur logiciel et apprenti DevOps basé à Montpellier, en alternance chez CA-GIP, étudiant en Master 2 ILSEN à Avignon Université. Son portfolio myPaulFolio présente son parcours sous forme de pipeline CI/CD interactif.
+Paul Valton est un développeur logiciel et apprenti DevOps basé à Montpellier, en alternance chez CA-GIP, étudiant en Master 2 ILSEN à Avignon Université. Son portfolio myPaulFolio (https://mypaulfolio.vercel.app) présente son parcours sous forme de pipeline CI/CD interactif.

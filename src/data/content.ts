@@ -35,7 +35,7 @@ export const PROFILE = {
 
 /** URL canonique du portfolio (à aligner avec le domaine de prod). */
 export const SITE = {
-  url: 'https://wemio.fr',
+  url: 'https://mypaulfolio.vercel.app',
   name: 'myPaulFolio',
   locale: 'fr_FR',
   get title() {
