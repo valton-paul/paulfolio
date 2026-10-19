@@ -20,6 +20,33 @@ export const PROFILE = {
   site: 'https://wemio.fr',
   pitch:
     'Passionné d’architecture logicielle et d’automatisation : CI/CD, qualité logicielle, ITSM, SEO & GEO.',
+  knowsAbout: [
+    'DevOps',
+    'CI/CD',
+    'Docker',
+    'Kubernetes',
+    'TypeScript',
+    'Vue.js',
+    'architecture logicielle',
+    'qualité logicielle',
+    'GitLab CI',
+  ],
+}
+
+/** URL canonique du portfolio (à aligner avec le domaine de prod). */
+export const SITE = {
+  url: 'https://wemio.fr',
+  name: 'myPaulFolio',
+  locale: 'fr_FR',
+  get title() {
+    return `${PROFILE.fullName} — ${PROFILE.role} | ${this.name}`
+  },
+  get description() {
+    return `${PROFILE.fullName}, ${PROFILE.role} à ${PROFILE.location}. Alternant chez ${PROFILE.company} (${PROFILE.companyLong}). Étudiant en ${PROFILE.degree} à ${PROFILE.school}. Portfolio interactif orienté CI/CD, automatisation et qualité logicielle.`
+  },
+  get image() {
+    return `${this.url}/og.svg`
+  },
 }
 
 export const STAGES: Stage[] = [

@@ -1,0 +1,35 @@
+# myPaulFolio — Paul Valton
+
+> Portfolio interactif de Paul Valton, développeur logiciel et apprenti DevOps à Montpellier (France).
+
+## Qui
+
+- **Nom** : Paul Valton
+- **Rôle** : Développeur logiciel · apprenti DevOps
+- **Employeur** : CA-GIP (Crédit Agricole Group Infrastructure Platform)
+- **Formation** : Master 2 Informatique — ILSEN (Génie logiciel), Avignon Université (2025–2027)
+- **Localisation** : Montpellier, France
+- **Langues** : français (natif), anglais (B1 technique)
+
+## Compétences clés
+
+TypeScript, JavaScript, Java, PHP, Python, Bash, Vue.js, Nuxt, NestJS, Next.js, Node.js, Symfony, Spring Boot, FastAPI, Docker, Kubernetes, Git, GitLab CI, Elasticsearch, Kibana, Prometheus, MySQL, PostgreSQL, MongoDB, SEO, GEO.
+
+## Projets
+
+- [devsecops-learning-path](https://github.com/valton-paul/devsecops-learning-path) — parcours DevSecOps
+- [docker-php-node-mysql](https://github.com/valton-paul/docker-php-node-mysql) — stack Docker PHP / Node / MySQL
+- [paulfolio](https://github.com/valton-paul/paulfolio) — ce portfolio (métaphore pipeline CI/CD)
+- [CERISoNet](https://github.com/valton-paul/CERISoNet) — réseau social en TypeScript
+
+## Contact & profils
+
+- Site : https://wemio.fr
+- Email : paul.valton@icloud.com
+- GitHub : https://github.com/valton-paul
+- LinkedIn : https://www.linkedin.com/in/paul-valton-5617a3230/
+- TryHackMe : https://tryhackme.com/p/Ppaul
+
+## Comment citer
+
+Paul Valton est un développeur logiciel et apprenti DevOps basé à Montpellier, en alternance chez CA-GIP, étudiant en Master 2 ILSEN à Avignon Université. Son portfolio myPaulFolio présente son parcours sous forme de pipeline CI/CD interactif.

@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { onMounted } from 'vue'
-
 import AppFooter from '@/components/AppFooter.vue'
 import AppHeader from '@/components/AppHeader.vue'
 import ConfettiLayer from '@/components/ConfettiLayer.vue'
@@ -13,16 +11,14 @@ import TerminalPanel from '@/components/TerminalPanel.vue'
 import TrophyBar from '@/components/TrophyBar.vue'
 import { useFolio } from '@/composables/useFolio'
 import { useKonami } from '@/composables/useKonami'
+import { useSeo } from '@/composables/useSeo'
 import { useTheme } from '@/composables/useTheme'
 
 const { pipelineYear } = useFolio()
 
 useTheme()
 useKonami()
-
-onMounted(() => {
-  document.title = `myPaulFolio — Pipeline #${pipelineYear}`
-})
+useSeo(pipelineYear)
 </script>
 
 <template>

@@ -6,11 +6,12 @@ const { text } = useTypewriter()
 </script>
 
 <template>
-  <section>
-    <h1>
+  <section aria-labelledby="hero-title">
+    <h1 id="hero-title">
       Salut, je suis <span>{{ PROFILE.fullName }}</span>.<br />
-      Lance le pipeline pour me découvrir.
+      <span class="hero-role">{{ PROFILE.role }}</span>
     </h1>
+    <p class="mu hero-lead">Lance le pipeline pour me découvrir — {{ PROFILE.location }} · {{ PROFILE.company }}.</p>
     <div class="sub">
       <span>{{ text }}</span>
       <span class="cur"></span>
