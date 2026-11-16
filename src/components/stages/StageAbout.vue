@@ -1,10 +1,14 @@
 <script setup lang="ts">
+import AppIcon from '@/components/AppIcon.vue'
 import { EDUCATION, EXPERIENCES, PROFILE } from '@/data/content'
 </script>
 
 <template>
   <div>
-    <h2>📥 checkout - qui suis-je ?</h2>
+    <h2 class="stage-title">
+      <AppIcon name="download" :size="18" />
+      checkout - qui suis-je ?
+    </h2>
     <p>
       Développeur logiciel &amp; <b>apprenti DevOps</b> chez
       <b>{{ PROFILE.company }}</b> ({{ PROFILE.companyLong }}).

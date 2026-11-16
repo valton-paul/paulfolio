@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import AppIcon from '@/components/AppIcon.vue'
 import { useFolio } from '@/composables/useFolio'
 import { SKILL_GROUPS } from '@/data/content'
 
@@ -7,7 +8,10 @@ const { passedSkills, markSkill } = useFolio()
 
 <template>
   <div>
-    <h2>🔧 build - la stack</h2>
+    <h2 class="stage-title">
+      <AppIcon name="wrench" :size="18" />
+      build - la stack
+    </h2>
     <p class="mu">Clique sur une compétence pour lui lancer un test unitaire.</p>
     <template v-for="group in SKILL_GROUPS" :key="group.label">
       <div class="grp">{{ group.label }}</div>

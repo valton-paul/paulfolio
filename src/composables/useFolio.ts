@@ -1,7 +1,7 @@
 import { computed, ref } from 'vue'
 
 import { STAGES, TROPHIES } from '@/data/content'
-import type { ConfettiPiece, LogLine, LogTone } from '@/types'
+import type { ConfettiPiece, LogLine, LogTone, TrophyId } from '@/types'
 
 import { prefersReducedMotion, sleep } from './useMotion'
 
@@ -12,7 +12,7 @@ const viewedIndex = ref<number | null>(null)
 const logs = ref<LogLine[]>([
   { id: 0, text: '$ en attente d’un déclenchement… (clique sur « checkout »)', tone: 'mu' },
 ])
-const unlocked = ref<number[]>([])
+const unlocked = ref<TrophyId[]>([])
 const passedSkills = ref<string[]>([])
 const confettiPieces = ref<ConfettiPiece[]>([])
 const hired = ref(false)
@@ -25,11 +25,11 @@ function log(text: string, tone: LogTone = '') {
   logs.value = [...logs.value, { id: logId++, text, tone }]
 }
 
-function trophy(index: number) {
-  const item = TROPHIES[index]
-  if (!item || unlocked.value.includes(index)) return
-  unlocked.value = [...unlocked.value, index]
-  log(`🏆 Succès débloqué : ${item.label}`, 'wa')
+function trophy(id: TrophyId) {
+  const item = TROPHIES.find((entry) => entry.id === id)
+  if (!item || unlocked.value.includes(id)) return
+  unlocked.value = [...unlocked.value, id]
+  log(`Succès débloqué : ${item.label}`, 'wa')
 }
 
 function confetti() {
@@ -60,7 +60,8 @@ function hire(options: { silent?: boolean } = {}) {
   hired.value = true
   confetti()
   if (!options.silent) {
-    log('git push origin main → Paul rejoint votre équipe 🎉', 'ok')
+    log('git push origin main → Paul rejoint votre équipe', 'ok')
+    trophy('hired')
   }
 }
 
@@ -87,8 +88,8 @@ async function run(index: number) {
   viewedIndex.value = index
   outputTick.value += 1
   busy.value = false
-  trophy(0)
-  if (done.value === STAGES.length) trophy(1)
+  trophy('first-build')
+  if (done.value === STAGES.length) trophy('all-green')
 }
 
 const pipelineYear = new Date().getFullYear()

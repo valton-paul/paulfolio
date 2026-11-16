@@ -11,7 +11,7 @@ const { text } = useTypewriter()
       Salut, je suis <span>{{ PROFILE.fullName }}</span>.<br />
       <span class="hero-role">{{ PROFILE.role }}</span>
     </h1>
-    <p class="mu hero-lead">Lance le pipeline pour me découvrir — {{ PROFILE.location }} · {{ PROFILE.company }}.</p>
+    <p class="mu hero-lead">Lance le pipeline pour me découvrir - {{ PROFILE.location }} · {{ PROFILE.company }}.</p>
     <div class="sub">
       <span>{{ text }}</span>
       <span class="cur"></span>

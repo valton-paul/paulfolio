@@ -39,7 +39,7 @@ export const SITE = {
   name: 'myPaulFolio',
   locale: 'fr_FR',
   get title() {
-    return `${PROFILE.fullName} — ${PROFILE.role} | ${this.name}`
+    return `${PROFILE.fullName} - ${PROFILE.role} | ${this.name}`
   },
   get description() {
     return `${PROFILE.fullName}, ${PROFILE.role} à ${PROFILE.location}. Alternant chez ${PROFILE.company} (${PROFILE.companyLong}). Étudiant en ${PROFILE.degree} à ${PROFILE.school}. Portfolio interactif orienté CI/CD, automatisation et qualité logicielle.`
@@ -54,7 +54,7 @@ export const STAGES: Stage[] = [
     id: 'checkout',
     name: 'checkout',
     description: 'À propos',
-    icon: '📥',
+    icon: 'download',
     logs: [
       'git clone git@github.com:valton-paul/paulfolio',
       'Résolution des deltas… 100 %',
@@ -65,7 +65,7 @@ export const STAGES: Stage[] = [
     id: 'build',
     name: 'build',
     description: 'Compétences',
-    icon: '🔧',
+    icon: 'wrench',
     logs: [
       'docker build -t paul-skills .',
       'Step 1/4 : FROM curiosity:latest',
@@ -77,14 +77,14 @@ export const STAGES: Stage[] = [
     id: 'test',
     name: 'test',
     description: 'Projets',
-    icon: '🧪',
+    icon: 'flask',
     logs: [
       'npm test',
       'Exécution de 4 suites…',
       'PASS devsecops-learning-path',
       'PASS docker-php-node-mysql',
       'PASS paulfolio',
-      'PASS CERISoNet',
+      'PASS AI-Infrastructure-Engineer',
       '✓ 4/4 projets verts',
     ],
   },
@@ -92,12 +92,12 @@ export const STAGES: Stage[] = [
     id: 'scan',
     name: 'security-scan',
     description: 'Sécu & certifs',
-    icon: '🛡️',
+    icon: 'shield',
     logs: [
       'trivy fs --severity HIGH .',
       'Analyse des dépendances…',
       '0 vulnérabilité critique',
-      'ITIL® 4 Foundation : à venir ⏳',
+      'ITIL® 4 Foundation : à venir',
       '✓ Scan terminé',
     ],
   },
@@ -105,22 +105,22 @@ export const STAGES: Stage[] = [
     id: 'deploy',
     name: 'deploy',
     description: 'Contact',
-    icon: '🚀',
+    icon: 'rocket',
     logs: [
       'kubectl rollout status deploy/paul',
       'Pods prêts : 3/3',
-      '✓ Paul est disponible en production 🚀',
+      '✓ Paul est disponible en production',
     ],
   },
 ]
 
 export const TROPHIES: Trophy[] = [
-  { icon: '🚀', label: 'Premier build' },
-  { icon: '🟢', label: 'Tout au vert' },
-  { icon: '🕶️', label: 'Hacker du terminal' },
-  { icon: '🥚', label: 'Easter egg trouvé' },
-  { icon: '🎉', label: 'Embauché !' },
-  { icon: '💊', label: 'Bug dans la matrix' },
+  { id: 'first-build', icon: 'rocket', label: 'Premier build' },
+  { id: 'all-green', icon: 'circle-check', label: 'Tout au vert' },
+  { id: 'terminal-hacker', icon: 'glasses', label: 'Hacker du terminal' },
+  { id: 'hired', icon: 'party', label: 'Embauché !' },
+  { id: 'matrix-bug', icon: 'bug', label: 'Bug dans la matrix' },
+  { id: 'easter-egg', icon: 'egg', label: 'Easter egg trouvé' },
 ]
 
 export const SKILL_GROUPS: SkillGroup[] = [
@@ -148,20 +148,20 @@ export const SKILL_GROUPS: SkillGroup[] = [
 
 export const PROJECTS: Project[] = [
   {
+    slug: 'AI-Infrastructure-Engineer',
+    description: 'Parcours d\'apprentissage: DevOps Engineer → Platform Engineer → AI Infrastructure / LLMOps Engineer.',
+  },
+  {
     slug: 'devsecops-learning-path',
-    description: 'Parcours d’apprentissage DevSecOps.',
+    description: 'Parcours d\'apprentissage: DevSecOps.',
   },
   {
     slug: 'docker-php-node-mysql',
-    description: 'Environnement Docker PHP / Node / MySQL.',
+    description: 'Environnement Docker PHP / Node / MySQL pour développer des applications web.',
   },
   {
     slug: 'paulfolio',
     description: 'Ce portfolio, version pipeline CI/CD.',
-  },
-  {
-    slug: 'CERISoNet',
-    description: 'Projet de réseau social en TypeScript.',
   },
 ]
 

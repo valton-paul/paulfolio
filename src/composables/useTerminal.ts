@@ -15,13 +15,14 @@ export function useTerminal() {
     {
       id: 0,
       kind: 'hint',
-      text: 'Tape une commande. Il y a au moins un secret caché 👀',
+      text: 'Tape une commande. Il y a au moins un secret caché.',
     },
   ])
   const input = ref('')
   const history = ref<string[]>([])
   const historyIndex = ref(-1)
   const scroller = ref<HTMLElement | null>(null)
+  const inputEl = ref<HTMLInputElement | null>(null)
   let blameIndex = 0
 
   const blameJokes = [
@@ -36,39 +37,33 @@ export function useTerminal() {
     help: () =>
       'Commandes : whoami · ls · skills · projects · contact · pipeline · theme [dark|light|matrix] · clear\n(et d’autres que je ne vous dirai pas…)',
     whoami: () =>
-      'Fallait lire la pipeline, je respecte le principe DRY (Don\'t Repeat Yourself).',
+      "Fallait lire la pipeline, je respecte le principe DRY (Don't Repeat Yourself).",
     ls: () => 'about/  skills/  projets/  certifs/  secret.txt',
-    skills: () =>
-      'Tapez whoami pour voir.',
+    skills: () => 'Tapez whoami pour voir.',
     projects: () =>
-      'devsecops-learning-path · docker-php-node-mysql · paulfolio · CERISoNet\n→ github.com/valton-paul',
+      'devsecops-learning-path · docker-php-node-mysql · paulfolio · AI-Infrastructure-Engineer\n→ github.com/valton-paul',
     contact: () =>
       `${PROFILE.email} · linkedin.com/in/paul-valton-5617a3230 · wemio.fr`,
     pipeline: () => `Progression : ${done.value}/${STAGES.length} stages validés.`,
-    'cat secret.txt': () => {
-      trophy(3)
-      return [
+    'cat secret.txt': () =>
+      [
         '--- secret.txt ---',
         'rm',
         'hire paul',
         'git blame',
         'docker ps',
-      ].join('\n')
-    },
+      ].join('\n'),
     'hire paul': () => 'permission denied',
     'rm -rf /': () => 'permission denied',
     rm: () => 'Missing parameter',
     'sudo hire paul': () => {
       hire({ silent: true })
-      trophy(4)
+      trophy('easter-egg')
       return '[sudo] mot de passe : ********\n✓ Offre envoyée. Paul est impatient de vous rejoindre !'
     },
-    'sudo rm -rf /': () => {
-      trophy(3)
-      return 'Nice try 😏  Permission denied : ce portfolio est protégé par un pipeline de sécurité.'
-    },
+    'sudo rm -rf /': () =>
+      'Nice try. Permission denied : ce portfolio est protégé par un pipeline de sécurité.',
     'git blame': () => {
-      trophy(3)
       const joke = blameJokes[blameIndex % blameJokes.length] ?? 'git blame : rien à signaler.'
       blameIndex += 1
       return joke
@@ -94,7 +89,7 @@ export function useTerminal() {
     if (!value) return
     history.value = [...history.value, value]
     historyIndex.value = history.value.length
-    trophy(2)
+    trophy('terminal-hacker')
     push('in', value)
 
     const key = value.toLowerCase()
@@ -104,6 +99,7 @@ export function useTerminal() {
       const arg = key.split(/\s+/)[1]
       if (arg === 'matrix') {
         result = '↑ ↑ ↓ ↓ ← → ← → B A'
+        void nextTick(() => inputEl.value?.blur())
       } else if (arg === 'dark' || arg === 'light') {
         apply(arg)
         result = `Thème : ${arg}`
@@ -148,6 +144,7 @@ export function useTerminal() {
     lines,
     input,
     scroller,
+    inputEl,
     exec,
     onKeydown,
   }

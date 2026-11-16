@@ -4,16 +4,43 @@ export type LogTone = 'ok' | 'wa' | 'er' | 'mu' | 'bl' | ''
 
 export type StageId = 'checkout' | 'build' | 'test' | 'scan' | 'deploy'
 
+export type TrophyId =
+  | 'first-build'
+  | 'all-green'
+  | 'terminal-hacker'
+  | 'hired'
+  | 'matrix-bug'
+  | 'easter-egg'
+
+export type IconName =
+  | 'download'
+  | 'wrench'
+  | 'flask'
+  | 'shield'
+  | 'rocket'
+  | 'loader'
+  | 'check'
+  | 'lock'
+  | 'circle-check'
+  | 'glasses'
+  | 'party'
+  | 'bug'
+  | 'egg'
+  | 'trophy'
+  | 'mail'
+  | 'eye'
+
 export interface Stage {
   id: StageId
   name: string
   description: string
-  icon: string
+  icon: IconName
   logs: string[]
 }
 
 export interface Trophy {
-  icon: string
+  id: TrophyId
+  icon: IconName
   label: string
 }
 

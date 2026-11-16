@@ -22,9 +22,8 @@ export function useKonami() {
       index = 0
       apply('matrix')
       confetti()
-      trophy(3)
-      trophy(5)
-      log('🕹️ Konami code activé : mode Matrix', 'ok')
+      trophy('matrix-bug')
+      log('Konami code activé : mode Matrix', 'ok')
     }
   }
 

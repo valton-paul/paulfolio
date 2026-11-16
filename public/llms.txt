@@ -1,4 +1,4 @@
-# myPaulFolio — Paul Valton
+# myPaulFolio - Paul Valton
 
 > Portfolio interactif de Paul Valton, développeur logiciel et apprenti DevOps à Montpellier (France).
 
@@ -7,7 +7,7 @@
 - **Nom** : Paul Valton
 - **Rôle** : Développeur logiciel · apprenti DevOps
 - **Employeur** : CA-GIP (Crédit Agricole Group Infrastructure Platform)
-- **Formation** : Master 2 Informatique — ILSEN (Génie logiciel), Avignon Université (2025–2027)
+- **Formation** : Master 2 Informatique - ILSEN (Génie logiciel), Avignon Université (2025–2027)
 - **Localisation** : Montpellier, France
 - **Langues** : français (natif), anglais (B1 technique)
 
@@ -17,10 +17,10 @@ TypeScript, JavaScript, Java, PHP, Python, Bash, Vue.js, Nuxt, NestJS, Next.js, 
 
 ## Projets
 
-- [devsecops-learning-path](https://github.com/valton-paul/devsecops-learning-path) — parcours DevSecOps
-- [docker-php-node-mysql](https://github.com/valton-paul/docker-php-node-mysql) — stack Docker PHP / Node / MySQL
-- [paulfolio](https://github.com/valton-paul/paulfolio) — ce portfolio (métaphore pipeline CI/CD)
-- [CERISoNet](https://github.com/valton-paul/CERISoNet) — réseau social en TypeScript
+- [devsecops-learning-path](https://github.com/valton-paul/devsecops-learning-path) - parcours DevSecOps
+- [AI-Infrastructure-Engineer](https://github.com/valton-paul/AI-Infrastructure-Engineer) - Parcours MLOps / IA
+- [docker-php-node-mysql](https://github.com/valton-paul/docker-php-node-mysql) - stack Docker PHP / Node / MySQL
+- [paulfolio](https://github.com/valton-paul/paulfolio) - ce portfolio (métaphore pipeline CI/CD)
 
 ## Contact & profils
 

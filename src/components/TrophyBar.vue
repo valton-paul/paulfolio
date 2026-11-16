@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import AppIcon from '@/components/AppIcon.vue'
 import { useFolio } from '@/composables/useFolio'
 
 const { trophies, unlocked } = useFolio()
@@ -7,12 +8,13 @@ const { trophies, unlocked } = useFolio()
 <template>
   <div class="trophies" aria-label="succès">
     <span
-      v-for="(trophy, index) in trophies"
-      :key="trophy.label"
+      v-for="trophy in trophies"
+      :key="trophy.id"
       class="tr"
-      :class="{ on: unlocked.includes(index) }"
+      :class="{ on: unlocked.includes(trophy.id) }"
     >
-      {{ trophy.icon }} {{ trophy.label }}
+      <AppIcon :name="trophy.icon" :size="14" />
+      {{ trophy.label }}
     </span>
   </div>
 </template>

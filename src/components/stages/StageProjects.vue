@@ -1,10 +1,14 @@
 <script setup lang="ts">
+import AppIcon from '@/components/AppIcon.vue'
 import { PROFILE, PROJECTS } from '@/data/content'
 </script>
 
 <template>
   <div>
-    <h2>🧪 test - projets</h2>
+    <h2 class="stage-title">
+      <AppIcon name="flask" :size="18" />
+      test - projets
+    </h2>
     <p class="mu">Ceux que j’ai épinglés sur GitHub.</p>
     <div class="cards">
       <a

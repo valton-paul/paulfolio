@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useTerminal } from '@/composables/useTerminal'
 
-const { lines, input, scroller, onKeydown } = useTerminal()
+const { lines, input, scroller, inputEl, onKeydown } = useTerminal()
 </script>
 
 <template>
@@ -20,6 +20,7 @@ const { lines, input, scroller, onKeydown } = useTerminal()
     <div class="row">
       <span class="ok">paul@folio:~$</span>
       <input
+        ref="inputEl"
         v-model="input"
         autocomplete="off"
         spellcheck="false"
