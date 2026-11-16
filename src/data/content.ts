@@ -210,10 +210,9 @@ export const EXPERIENCES: TimelineItem[] = [
 ]
 
 export const TYPEWRITER_PHRASES = [
-  'Développeur logiciel · apprenti DevOps',
-  'CI/CD, qualité, automatisation',
+  'Développeur logiciel · apprenti DevSecOps',
+  'CI/CD, qualité, AI, automatisation',
   'Montpellier · Crédit Agricole Group Infrastructure Platform',
-  'Ici, tout est numérique.',
 ]
 
 export const KONAMI_SEQUENCE = [
