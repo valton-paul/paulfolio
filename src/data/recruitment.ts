@@ -78,7 +78,7 @@ export const RECRUITMENT_DIALOGUE: DialogueLine[] = [
   },
   {
     speaker: 'rh',
-    text: 'TypeScript, web, DevOps… il shippe.',
+    text: 'TypeScript, web, DevSecOps… il shippe.',
     mood: { rh: 'talk', cto: 'think' },
     showDossier: true,
     camera: 'dossier',
