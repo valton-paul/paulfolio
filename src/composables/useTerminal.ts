@@ -35,13 +35,25 @@ export function useTerminal() {
     'En fait c’est pas moi, c’est le pipeline.',
   ]
 
+  const rejectHireJokes = [
+    (name: string) =>
+      `[sudo] mot de passe : ********\n✗ ${name} : personne pas qualifiée.`,
+    (name: string) =>
+      `[sudo] mot de passe : ********\n✗ Recrutement refusé : ${name} ne match pas le job description.`,
+    (name: string) =>
+      `[sudo] mot de passe : ********\n✗ ${name} : CV rejeté par le pipeline RH.`,
+    (name: string) =>
+      `[sudo] mot de passe : ********\n✗ Soft skills OK, hard skills KO. Au revoir ${name}.`,
+  ]
+  let rejectHireIndex = 0
+
   const commands: Record<string, () => string | null> = {
     help: () =>
       'Commandes : whoami · ls · cat · skills · projects · contact · pipeline · theme [dark|light|matrix] · clear\n(et d’autres que je ne vous dirai pas…)',
     whoami: () =>
       "Fallait lire la pipeline, je respecte le principe DRY (Don't Repeat Yourself).",
     ls: () => 'about/  skills/  projets/  certifs/  secret.txt',
-    cat: () => 'Rien à voir avec un chat... ça permet de voir le contenu d\'un fichier, un fichier .txt par exemple...',
+    cat: () => 'cat votreFichier.txt',
     skills: () => 'Tapez whoami pour voir.',
     projects: () =>
       'devsecops-learning-path · docker-php-node-mysql · paulfolio · AI-Infrastructure-Engineer\n→ github.com/valton-paul',
@@ -52,24 +64,11 @@ export function useTerminal() {
       [
         '--- secret.txt ---',
         'rm',
-        'hire paul',
+        'hire prenom',
         'git blame',
         'docker ps',
       ].join('\n'),
-    'hire paul': () => 'permission denied',
-    'rm -rf /': () => 'permission denied',
     rm: () => 'Missing parameter',
-    'sudo hire paul': () => {
-      hire({ silent: true })
-      trophy('easter-egg')
-      void nextTick(() => {
-        inputEl.value?.blur()
-        startRecruitment()
-      })
-      return '[sudo] mot de passe : ********\n✓ Entretien RH lancé…'
-    },
-    'sudo rm -rf /': () =>
-      'Nice try. Permission denied : ce portfolio est protégé par un pipeline de sécurité.',
     'git blame': () => {
       const joke = blameJokes[blameIndex % blameJokes.length] ?? 'git blame : rien à signaler.'
       blameIndex += 1
@@ -82,6 +81,28 @@ export function useTerminal() {
       lines.value = []
       return null
     },
+  }
+
+  function handleSudoHire(name: string): string {
+    if (name === 'paul') {
+      hire({ silent: true })
+      trophy('easter-egg')
+      void nextTick(() => {
+        inputEl.value?.blur()
+        startRecruitment()
+      })
+      return '[sudo] mot de passe : ********\n✓ Entretien RH lancé…'
+    }
+    const joke = rejectHireJokes[rejectHireIndex % rejectHireJokes.length]!
+    rejectHireIndex += 1
+    return joke(name)
+  }
+
+  function handleSudoRm(args: string): string {
+    if (args === '-rf /' || args === '-rf /.' || args.startsWith('-rf')) {
+      return 'Nice try. Permission denied : ce portfolio est protégé par un pipeline de sécurité.'
+    }
+    return 'permission denied'
   }
 
   function push(kind: TermLine['kind'], text: string) {
@@ -102,6 +123,11 @@ export function useTerminal() {
     const key = value.toLowerCase()
     let result: string | null
 
+    const hireMatch = /^hire(?:\s+(\S+))?$/.exec(key)
+    const sudoHireMatch = /^sudo hire(?:\s+(\S+))?$/.exec(key)
+    const sudoRmMatch = /^sudo rm(?:\s+(.+))?$/.exec(key)
+    const rmMatch = /^rm(?:\s+(.+))?$/.exec(key)
+
     if (key.startsWith('theme')) {
       const arg = key.split(/\s+/)[1]
       if (arg === 'matrix') {
@@ -113,6 +139,15 @@ export function useTerminal() {
       } else {
         result = 'Usage : theme dark|light|matrix'
       }
+    } else if (sudoHireMatch) {
+      const name = sudoHireMatch[1]
+      result = name ? handleSudoHire(name) : 'Usage : sudo hire <prenom>'
+    } else if (hireMatch) {
+      result = hireMatch[1] ? 'permission denied' : 'Usage : hire <prenom>'
+    } else if (sudoRmMatch) {
+      result = sudoRmMatch[1] ? handleSudoRm(sudoRmMatch[1]) : 'Missing parameter'
+    } else if (rmMatch?.[1]) {
+      result = 'permission denied'
     } else if (commands[key]) {
       result = commands[key]()
     } else {
