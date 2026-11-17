@@ -48,6 +48,7 @@ export function useSeo(pipelineYear: number) {
       'keywords',
       [
         PROFILE.fullName,
+        'DevSecOps',
         'DevOps',
         'développeur logiciel',
         'Montpellier',

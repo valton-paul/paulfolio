@@ -1,11 +1,11 @@
 # myPaulFolio - Paul Valton
 
-> Portfolio interactif de Paul Valton, développeur logiciel et apprenti DevOps à Montpellier (France).
+> Portfolio interactif de Paul Valton, développeur logiciel et apprenti DevSecOps à Montpellier (France).
 
 ## Qui
 
 - **Nom** : Paul Valton
-- **Rôle** : Développeur logiciel · apprenti DevOps
+- **Rôle** : Développeur logiciel · apprenti DevSecOps
 - **Employeur** : CA-GIP (Crédit Agricole Group Infrastructure Platform)
 - **Formation** : Master 2 Informatique - ILSEN (Génie logiciel), Avignon Université (2025–2027)
 - **Localisation** : Montpellier, France
@@ -33,4 +33,4 @@ TypeScript, JavaScript, Java, PHP, Python, Bash, Vue.js, Nuxt, NestJS, Next.js, 
 
 ## Comment citer
 
-Paul Valton est un développeur logiciel et apprenti DevOps basé à Montpellier, en alternance chez CA-GIP, étudiant en Master 2 ILSEN à Avignon Université. Son portfolio myPaulFolio (https://mypaulfolio.vercel.app) présente son parcours sous forme de pipeline CI/CD interactif.
+Paul Valton est un développeur logiciel et apprenti DevSecOps basé à Montpellier, en alternance chez CA-GIP, étudiant en Master 2 ILSEN à Avignon Université. Son portfolio myPaulFolio (https://mypaulfolio.vercel.app) présente son parcours sous forme de pipeline CI/CD interactif.

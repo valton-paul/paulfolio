@@ -9,8 +9,8 @@
   <rect width="1200" height="630" fill="url(#dots)"/>
   <text x="80" y="160" fill="#7c8ca0" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="28">myPaulFolio ~/pipeline</text>
   <text x="80" y="280" fill="#d7e2ee" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="64" font-weight="700">Paul Valton</text>
-  <text x="80" y="360" fill="#3ddc97" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="36">Développeur logiciel · apprenti DevOps</text>
-  <text x="80" y="440" fill="#7c8ca0" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="26">Montpellier · CA-GIP · CI/CD · Vue · Kubernetes</text>
+  <text x="80" y="360" fill="#3ddc97" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="36">Dï¿½veloppeur logiciel ï¿½ appreDevSecOpsvOps</text>
+  <text x="80" y="440" fill="#7c8ca0" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="26">Montpellier ï¿½ CA-GIP ï¿½ CI/CD ï¿½ Vue ï¿½ Kubernetes</text>
   <rect x="80" y="500" width="220" height="48" rx="10" fill="#3ddc97"/>
   <text x="190" y="532" text-anchor="middle" fill="#04130c" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="22" font-weight="700">pipeline </text>
 </svg>

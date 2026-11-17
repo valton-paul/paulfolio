@@ -4,7 +4,7 @@ export const PROFILE = {
   firstName: 'Paul',
   lastName: 'Valton',
   fullName: 'Paul Valton',
-  role: 'Développeur logiciel · apprenti DevOps',
+  role: 'Développeur logiciel · apprenti DevSecOps',
   company: 'CA-GIP',
   companyLong: 'Crédit Agricole Group Infrastructure Platform',
   location: 'Montpellier, France',
@@ -21,7 +21,7 @@ export const PROFILE = {
   pitch:
     'Passionné d’architecture logicielle et d’automatisation : CI/CD, qualité logicielle, ITSM, SEO & GEO.',
   knowsAbout: [
-    'DevOps',
+    'DevSecOps',
     'CI/CD',
     'Docker',
     'Kubernetes',
@@ -133,7 +133,7 @@ export const SKILL_GROUPS: SkillGroup[] = [
     items: ['Vue.js', 'Nuxt', 'NestJS', 'Next.js', 'Node.js', 'Symfony', 'Spring Boot', 'FastAPI'],
   },
   {
-    label: 'DevOps & Cloud',
+    label: 'DevSecOps & Cloud',
     items: ['Docker', 'Kubernetes', 'Git', 'GitLab CI', 'Elasticsearch', 'Kibana', 'Prometheus'],
   },
   {
@@ -149,7 +149,7 @@ export const SKILL_GROUPS: SkillGroup[] = [
 export const PROJECTS: Project[] = [
   {
     slug: 'AI-Infrastructure-Engineer',
-    description: 'Parcours d\'apprentissage: DevOps Engineer → Platform Engineer → AI Infrastructure / LLMOps Engineer.',
+    description: 'Parcours d\'apprentissage: DevSecOps Engineer → Platform Engineer → AI Infrastructure / LLMOps Engineer.',
   },
   {
     slug: 'devsecops-learning-path',
@@ -188,18 +188,18 @@ export const EDUCATION: TimelineItem[] = [
 
 export const EXPERIENCES: TimelineItem[] = [
   {
-    title: 'Apprenti DevOps',
+    title: 'Apprenti DevSecOps',
     period: 'Septembre 2025 – Août 2027',
     place: 'CA-GIP · Crédit Agricole Group Infrastructure Platform',
     details:
-      'Développement et maintenance d’une application interne pour les équipes DevOps. Collaboration avec les Ops et montée en compétences opérationnelles.',
+      'Développement et maintenance d’une application interne pour les équipes DevSecOps. Collaboration avec les Ops et montée en compétences opérationnelles.',
   },
   {
     title: 'Stage Développeur Full-Stack',
     period: 'Avril 2025 – Août 2025',
     place: 'CA-GIP',
     details:
-      'Déploiement d’une solution conteneurisée sur Kubernetes pour l’automatisation et l’audit des données DevOps.',
+      'Déploiement d’une solution conteneurisée sur Kubernetes pour l’automatisation et l’audit des données DevSecOps.',
   },
   {
     title: 'Stage Conception de process métier',

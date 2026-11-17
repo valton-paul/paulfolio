@@ -10,7 +10,7 @@ import { EDUCATION, EXPERIENCES, PROFILE } from '@/data/content'
       checkout - qui suis-je ?
     </h2>
     <p>
-      Développeur logiciel &amp; <b>apprenti DevOps</b> chez
+      Développeur logiciel &amp; <b>apprenti DevSecOps</b> chez
       <b>{{ PROFILE.company }}</b> ({{ PROFILE.companyLong }}).
     </p>
     <p>

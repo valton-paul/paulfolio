@@ -40,7 +40,7 @@ export const RECRUITMENT_CANDIDATE = {
   bullets: [
     'Passionné par le développement et l’automatisation.',
     'Expérience avec JavaScript, TypeScript et les technologies web.',
-    'Intérêt pour le DevOps, Docker et Kubernetes.',
+    'Intérêt pour le DevSecOps, Docker et Kubernetes.',
     'Curieux, autonome et toujours prêt à apprendre.',
   ],
 }
