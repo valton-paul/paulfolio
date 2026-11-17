@@ -9,6 +9,7 @@ import PipelineBoard from '@/components/PipelineBoard.vue'
 import ProgressBar from '@/components/ProgressBar.vue'
 import TerminalPanel from '@/components/TerminalPanel.vue'
 import TrophyBar from '@/components/TrophyBar.vue'
+import RecruitmentEgg from '@/components/recruitment/RecruitmentEgg.vue'
 import { useFolio } from '@/composables/useFolio'
 import { useKonami } from '@/composables/useKonami'
 import { useSeo } from '@/composables/useSeo'
@@ -34,4 +35,5 @@ useSeo(pipelineYear)
     <AppFooter />
   </main>
   <ConfettiLayer />
+  <RecruitmentEgg />
 </template>

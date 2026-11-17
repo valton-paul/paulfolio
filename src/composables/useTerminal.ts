@@ -4,12 +4,14 @@ import { PROFILE, STAGES } from '@/data/content'
 import type { TermLine } from '@/types'
 
 import { useFolio } from './useFolio'
+import { useRecruitment } from './useRecruitment'
 import { useTheme } from './useTheme'
 
 let lineId = 1
 
 export function useTerminal() {
   const { done, trophy, hire } = useFolio()
+  const { start: startRecruitment } = useRecruitment()
   const { apply } = useTheme()
   const lines = ref<TermLine[]>([
     {
@@ -35,10 +37,11 @@ export function useTerminal() {
 
   const commands: Record<string, () => string | null> = {
     help: () =>
-      'Commandes : whoami · ls · skills · projects · contact · pipeline · theme [dark|light|matrix] · clear\n(et d’autres que je ne vous dirai pas…)',
+      'Commandes : whoami · ls · cat · skills · projects · contact · pipeline · theme [dark|light|matrix] · clear\n(et d’autres que je ne vous dirai pas…)',
     whoami: () =>
       "Fallait lire la pipeline, je respecte le principe DRY (Don't Repeat Yourself).",
     ls: () => 'about/  skills/  projets/  certifs/  secret.txt',
+    cat: () => 'Rien à voir avec un chat... ça permet de voir le contenu d\'un fichier, un fichier .txt par exemple...',
     skills: () => 'Tapez whoami pour voir.',
     projects: () =>
       'devsecops-learning-path · docker-php-node-mysql · paulfolio · AI-Infrastructure-Engineer\n→ github.com/valton-paul',
@@ -59,7 +62,11 @@ export function useTerminal() {
     'sudo hire paul': () => {
       hire({ silent: true })
       trophy('easter-egg')
-      return '[sudo] mot de passe : ********\n✓ Offre envoyée. Paul est impatient de vous rejoindre !'
+      void nextTick(() => {
+        inputEl.value?.blur()
+        startRecruitment()
+      })
+      return '[sudo] mot de passe : ********\n✓ Entretien RH lancé…'
     },
     'sudo rm -rf /': () =>
       'Nice try. Permission denied : ce portfolio est protégé par un pipeline de sécurité.',
