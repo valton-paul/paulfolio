@@ -36,7 +36,7 @@ function upsertJsonLd(id: string, data: Record<string, unknown>) {
 
 export function useSeo(pipelineYear: number) {
   onMounted(() => {
-    const title = `${SITE.name} - Pipeline #${pipelineYear} · ${PROFILE.fullName}`
+    const title = `${SITE.name}`
     document.title = title
     document.documentElement.lang = 'fr'
 

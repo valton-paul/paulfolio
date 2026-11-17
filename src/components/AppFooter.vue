@@ -13,7 +13,6 @@ const year = new Date().getFullYear()
       <a :href="PROFILE.linkedin" target="_blank" rel="noopener noreferrer me">LinkedIn</a>
       <a :href="PROFILE.tryhackme" target="_blank" rel="noopener noreferrer me">TryHackMe</a>
       <a :href="PROFILE.site" target="_blank" rel="noopener noreferrer me">wemio.fr</a>
-      <a href="/llms.txt" rel="alternate">llms.txt</a>
     </nav>
   </footer>
 </template>
