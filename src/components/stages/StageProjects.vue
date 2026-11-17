@@ -9,7 +9,7 @@ import { PROFILE, PROJECTS } from '@/data/content'
       <AppIcon name="flask" :size="18" />
       test - projets
     </h2>
-    <p class="mu">Ceux que j’ai épinglés sur GitHub.</p>
+    <p class="mu">Ceux que j’ai épinglés sur GitHub. Sinon <a :href="`${PROFILE.github}?tab=repositories`" target="_blank" rel="noopener noreferrer" class="text-blue-500 hover:underline font-bold">voir mes autres projets</a></p>
     <div class="cards">
       <a
         v-for="project in PROJECTS"
