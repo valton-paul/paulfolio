@@ -336,7 +336,7 @@ function createActor(id: ActorId, initialSpot: ActorSpot): ActorController {
     if (snapSpot) {
       snapTo(snapSpot)
     } else {
-      // Freeze mid-path — never teleport back to an old spot.
+      // Freeze mid-path - never teleport back to an old spot.
       state.spot = nearestSpot()
       state.pose = 'standing'
       if (state.spot === 'coffee') state.z = 5

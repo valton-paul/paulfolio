@@ -183,7 +183,7 @@ async function playCurrentLine(token: number): Promise<void> {
       scheduleDossierHide()
     }
   }
-  // Sinon : on ne force plus l'affichage — le timer de 8s gère la disparition.
+  // Sinon : on ne force plus l'affichage - le timer de 8s gère la disparition.
 
   applySpeakerMood(line)
 

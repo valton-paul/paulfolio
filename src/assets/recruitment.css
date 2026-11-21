@@ -249,7 +249,7 @@
   min-height: 520px;
 }
 
-/* Camera moves on an inner clipped layer — never expands the stage scrollbar */
+/* Camera moves on an inner clipped layer - never expands the stage scrollbar */
 .office-cam {
   position: absolute;
   inset: 0;
@@ -799,7 +799,7 @@
   color: #ffd7b5;
 }
 
-/* ─── Actors (JS-driven left/bottom — no CSS teleport) ─── */
+/* ─── Actors (JS-driven left/bottom - no CSS teleport) ─── */
 
 .actor {
   position: absolute;

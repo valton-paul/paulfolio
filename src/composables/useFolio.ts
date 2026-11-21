@@ -3,7 +3,7 @@ import { computed, ref } from 'vue'
 import { STAGES, TROPHIES } from '@/data/content'
 import type { ConfettiPiece, LogLine, LogTone, TrophyId } from '@/types'
 
-import { prefersReducedMotion, sleep } from './useMotion'
+import { prefersReducedMotion, wait } from './useMotion'
 
 const done = ref(0)
 const busy = ref(false)
@@ -78,11 +78,13 @@ async function run(index: number) {
   log(`\n▶ stage « ${stage.name} »`, 'bl')
 
   for (const line of stage.logs) {
-    await sleep(380)
+    const pause = line.startsWith('✓') ? 720 : 560
+    await wait(pause)
     const tone: LogTone = line.startsWith('✓') || line.startsWith('PASS') ? 'ok' : ''
     log(line, tone)
   }
 
+  await wait(420)
   if (index >= done.value) done.value = index + 1
   runningIndex.value = null
   viewedIndex.value = index
