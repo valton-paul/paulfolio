@@ -238,6 +238,7 @@ async function runBoot() {
 function start() {
   reset()
   open.value = true
+  document.documentElement.dataset.cinema = 'on'
   document.body.style.overflow = 'hidden'
   void runBoot()
 }
@@ -249,6 +250,7 @@ async function close() {
   cancelRecruitmentActors()
   await wait(280)
   open.value = false
+  delete document.documentElement.dataset.cinema
   document.body.style.overflow = ''
   reset()
 }

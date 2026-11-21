@@ -651,9 +651,9 @@ a.card:hover {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
+  html:not([data-cinema='on']) *,
+  html:not([data-cinema='on']) *::before,
+  html:not([data-cinema='on']) *::after {
     animation: none !important;
     transition: none !important;
   }

@@ -85,6 +85,7 @@ onMounted(() => window.addEventListener('keydown', onKeydown))
 onUnmounted(() => {
   window.removeEventListener('keydown', onKeydown)
   document.body.style.overflow = ''
+  delete document.documentElement.dataset.cinema
 })
 </script>
 
