@@ -7,7 +7,7 @@ import { EDUCATION, EXPERIENCES, PROFILE } from '@/data/content'
   <div>
     <h2 class="stage-title">
       <AppIcon name="download" :size="18" />
-      checkout - qui suis-je ?
+      checkout · qui suis-je ?
     </h2>
     <p>
       Développeur logiciel &amp; <b>apprenti DevSecOps</b> chez
@@ -20,21 +20,21 @@ import { EDUCATION, EXPERIENCES, PROFILE } from '@/data/content'
     <p class="mu">Langues : {{ PROFILE.languages }}</p>
 
     <div class="grp">parcours</div>
-    <div class="cards">
-      <article v-for="item in EDUCATION" :key="item.title" class="card">
+    <ol class="timeline">
+      <li v-for="item in EDUCATION" :key="item.title" class="timeline-item">
         <b>{{ item.title }}</b>
         <span>{{ item.period }} · {{ item.place }}</span>
         <span>{{ item.details }}</span>
-      </article>
-    </div>
+      </li>
+    </ol>
 
     <div class="grp">expériences</div>
-    <div class="cards">
-      <article v-for="item in EXPERIENCES" :key="item.title" class="card">
+    <ol class="timeline">
+      <li v-for="item in EXPERIENCES" :key="item.title" class="timeline-item">
         <b>{{ item.title }}</b>
         <span>{{ item.period }} · {{ item.place }}</span>
         <span>{{ item.details }}</span>
-      </article>
-    </div>
+      </li>
+    </ol>
   </div>
 </template>

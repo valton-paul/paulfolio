@@ -1698,49 +1698,5 @@
   }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .recruit-backdrop,
-  .recruit-stage,
-  .dossier,
-  .stamp,
-  .speech-bubble,
-  .char,
-  .char .arm-l,
-  .char .arm-r,
-  .char .leg-l,
-  .char .leg-r,
-  .char .mouth,
-  .char .led,
-  .char .antenna-tip,
-  .char .eye,
-  .char .shadow,
-  .auto-hint::after,
-  .bubble-caret,
-  .cloud,
-  .cloud-a,
-  .cloud-b,
-  .cloud-c,
-  .plant-leaf,
-  .cm-steam span,
-  .coffee-set.active .cm-display,
-  .office.celebrate .char,
-  .actor-dossier.dossier-carried {
-    animation: none !important;
-  }
-
-  .office,
-  .office-cam,
-  .actor-dossier {
-    transition: none;
-  }
-
-  .boot-bar div,
-  .recruit-progress-bar {
-    transition: none;
-  }
-
-  .bubble-enter-active,
-  .bubble-leave-active {
-    transition: none;
-  }
-}
+/* Easter egg is opt-in cinema: keep walks, bubbles and props animated
+   even when the OS asks for reduced motion. */

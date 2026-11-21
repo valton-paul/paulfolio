@@ -1,7 +1,7 @@
 import { reactive, ref, type Reactive } from 'vue'
 
 import type { CharacterMood, CtoSpot } from '@/data/recruitment'
-import { prefersReducedMotion, sleep } from '@/composables/useMotion'
+import { wait } from '@/composables/useMotion'
 
 export type ActorId = 'rh' | 'cto'
 export type ActorFacing = 'left' | 'right'
@@ -44,7 +44,8 @@ export function setActorSpeedScale(scale: number) {
 }
 
 function scaledMs(ms: number): number {
-  if (prefersReducedMotion()) return Math.min(ms, 40)
+  // Easter egg is an explicit cinematic: always animate, even if the OS
+  // prefers reduced motion (Windows "Show animations" off, etc.).
   return Math.max(40, ms / speedScaleRef.value)
 }
 
@@ -59,7 +60,7 @@ function animateNumeric(
   onUpdate: (value: number) => void,
   isStale: () => boolean,
 ): Promise<void> {
-  if (durationMs <= 40 || prefersReducedMotion() || Math.abs(to - from) < 0.05) {
+  if (durationMs <= 40 || Math.abs(to - from) < 0.05) {
     onUpdate(to)
     return Promise.resolve()
   }
@@ -176,7 +177,7 @@ function createActor(id: ActorId, initialSpot: ActorSpot): ActorController {
     return enqueue(async () => {
       if (isStale(taskEpoch) || state.facing === facing) return
       state.facing = facing
-      await sleep(scaledMs(120))
+      await wait(scaledMs(120))
     })
   }
 
@@ -195,7 +196,7 @@ function createActor(id: ActorId, initialSpot: ActorSpot): ActorController {
       const desiredFacing: ActorFacing = dx >= 0 ? 'right' : 'left'
       if (state.facing !== desiredFacing) {
         state.facing = desiredFacing
-        await sleep(scaledMs(140))
+        await wait(scaledMs(140))
         if (isStale(taskEpoch)) return
       }
 
@@ -252,7 +253,7 @@ function createActor(id: ActorId, initialSpot: ActorSpot): ActorController {
       else state.z = id === 'rh' ? 3 : 4
 
       state.pose = 'stopping'
-      await sleep(scaledMs(160))
+      await wait(scaledMs(160))
       if (isStale(taskEpoch)) {
         state.pose = 'standing'
         return
@@ -268,7 +269,7 @@ function createActor(id: ActorId, initialSpot: ActorSpot): ActorController {
     return enqueue(async () => {
       state.pose = state.pose === 'sitting' ? 'sitting' : 'standing'
       state.mood = 'idle'
-      await sleep(scaledMs(80))
+      await wait(scaledMs(80))
     })
   }
 
@@ -276,14 +277,14 @@ function createActor(id: ActorId, initialSpot: ActorSpot): ActorController {
     return enqueue(async () => {
       if (state.pose === 'walking') return
       state.mood = 'talk'
-      await sleep(scaledMs(60))
+      await wait(scaledMs(60))
     })
   }
 
   async function react(emotion: CharacterMood): Promise<void> {
     return enqueue(async () => {
       state.mood = emotion
-      await sleep(scaledMs(90))
+      await wait(scaledMs(90))
     })
   }
 
@@ -292,7 +293,7 @@ function createActor(id: ActorId, initialSpot: ActorSpot): ActorController {
       if (state.pose === 'sitting') return
       state.pose = 'sitting'
       state.y = Math.max(5, state.y - 1.2)
-      await sleep(scaledMs(220))
+      await wait(scaledMs(220))
     })
   }
 
@@ -302,7 +303,7 @@ function createActor(id: ActorId, initialSpot: ActorSpot): ActorController {
       const base = SPOTS[state.spot]
       state.pose = 'standing'
       state.y = base.y
-      await sleep(scaledMs(200))
+      await wait(scaledMs(200))
     })
   }
 

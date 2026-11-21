@@ -189,21 +189,21 @@ export const EDUCATION: TimelineItem[] = [
 export const EXPERIENCES: TimelineItem[] = [
   {
     title: 'Apprenti DevSecOps',
-    period: 'Septembre 2025 – Août 2027',
+    period: 'Sept. 2025 – août 2027',
     place: 'CA-GIP · Crédit Agricole Group Infrastructure Platform',
     details:
       'Développement et maintenance d’une application interne pour les équipes DevSecOps. Collaboration avec les Ops et montée en compétences opérationnelles.',
   },
   {
     title: 'Stage Développeur Full-Stack',
-    period: 'Avril 2025 – Août 2025',
+    period: 'Avril 2025 – août 2025',
     place: 'CA-GIP',
     details:
       'Déploiement d’une solution conteneurisée sur Kubernetes pour l’automatisation et l’audit des données DevSecOps.',
   },
   {
     title: 'Stage Conception de process métier',
-    period: 'Avril 2024 – Juin 2024',
+    period: 'Avril 2024 – juin 2024',
     place: 'Nexecur (Groupe Crédit Agricole)',
     details: 'Conception et mise en œuvre de processus métiers automatisés.',
   },

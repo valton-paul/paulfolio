@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { onUnmounted, ref, watch } from 'vue'
 
-import { prefersReducedMotion } from '@/composables/useMotion'
+import { DIALOGUE_CHAR_MS } from '@/data/recruitment'
 
 const props = defineProps<{
   text: string
@@ -33,14 +33,8 @@ function typeText(full: string, gen: number) {
     return
   }
 
-  if (prefersReducedMotion()) {
-    displayed.value = full
-    emit('typed')
-    return
-  }
-
   const scale = Math.max(0.5, props.speedScale ?? 1)
-  const stepMs = Math.max(12, 28 / scale)
+  const stepMs = Math.max(16, DIALOGUE_CHAR_MS / scale)
   let i = 0
 
   const tick = () => {

@@ -2,45 +2,47 @@ import { onMounted, onUnmounted, ref } from 'vue'
 
 import { TYPEWRITER_PHRASES } from '@/data/content'
 
-import { prefersReducedMotion } from './useMotion'
+const TYPE_MS = 55
+const DELETE_MS = 28
+const HOLD_MS = 1600
 
 export function useTypewriter() {
-  const text = ref(TYPEWRITER_PHRASES[0] ?? '')
+  const text = ref('')
   let timer = 0
 
   onMounted(() => {
-    if (prefersReducedMotion()) {
-      let index = 0
-      const rotate = () => {
-        index = (index + 1) % TYPEWRITER_PHRASES.length
-        text.value = TYPEWRITER_PHRASES[index] ?? TYPEWRITER_PHRASES[0] ?? ''
-        timer = window.setTimeout(rotate, 2800)
-      }
-      timer = window.setTimeout(rotate, 2800)
-      return
-    }
-
     let phraseIndex = 0
     let cursor = 0
     let deleting = false
 
     const tick = () => {
       const phrase = TYPEWRITER_PHRASES[phraseIndex] ?? ''
-      text.value = phrase.slice(0, cursor)
-      if (!deleting && cursor === phrase.length) {
-        deleting = true
-        timer = window.setTimeout(tick, 1400)
+
+      if (!deleting && cursor < phrase.length) {
+        cursor += 1
+        text.value = phrase.slice(0, cursor)
+        timer = window.setTimeout(tick, TYPE_MS)
         return
       }
-      if (deleting && cursor === 0) {
-        deleting = false
-        phraseIndex = (phraseIndex + 1) % TYPEWRITER_PHRASES.length
+
+      if (!deleting && cursor === phrase.length) {
+        deleting = true
+        timer = window.setTimeout(tick, HOLD_MS)
+        return
       }
-      cursor += deleting ? -1 : 1
-      timer = window.setTimeout(tick, deleting ? 25 : 55)
+
+      if (deleting && cursor > 0) {
+        cursor -= 1
+        text.value = phrase.slice(0, cursor)
+        timer = window.setTimeout(tick, DELETE_MS)
+        return
+      }
+
+      deleting = false
+      phraseIndex = (phraseIndex + 1) % TYPEWRITER_PHRASES.length
+      timer = window.setTimeout(tick, TYPE_MS)
     }
 
-    text.value = ''
     tick()
   })
 

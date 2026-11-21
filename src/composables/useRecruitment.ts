@@ -1,12 +1,14 @@
 import { computed, ref, watch } from 'vue'
 
 import {
+  DIALOGUE_CHAR_MS,
+  DIALOGUE_HOLD_BASE_MS,
   RECRUITMENT_DIALOGUE,
   type CameraBeat,
   type DialogueLine,
   type RecruitmentPhase,
 } from '@/data/recruitment'
-import { prefersReducedMotion, sleep } from '@/composables/useMotion'
+import { wait } from '@/composables/useMotion'
 import {
   cancelRecruitmentActors,
   resetRecruitmentActors,
@@ -70,7 +72,6 @@ function clearTimers() {
 }
 
 function scaled(ms: number): number {
-  if (prefersReducedMotion()) return Math.min(ms, 80)
   return Math.max(40, ms / speedScale.value)
 }
 
@@ -104,11 +105,11 @@ async function playDossierHandOff(token: number): Promise<void> {
   rh.setMood('confident')
   showDossier.value = true
   dossierMode.value = 'carried'
-  await sleep(scaled(520))
+  await wait(scaled(520))
   if (token !== playToken || !open.value) return
 
   dossierMode.value = 'passing'
-  await sleep(scaled(480))
+  await wait(scaled(480))
   if (token !== playToken || !open.value) return
 
   dossierMode.value = 'desk'
@@ -142,14 +143,16 @@ function applySpeakerMood(line: DialogueLine): void {
 }
 
 function holdDuration(line: DialogueLine): number {
-  if (!line.text.trim()) return scaled(line.pauseMs ?? 1200)
-  const reading = 900 + line.text.length * 28
-  return scaled(Math.max(line.pauseMs ?? 0, reading))
+  if (!line.text.trim()) {
+    return Math.max(700, (line.pauseMs ?? DIALOGUE_HOLD_BASE_MS) / speedScale.value)
+  }
+  const reading = DIALOGUE_HOLD_BASE_MS + line.text.length * DIALOGUE_CHAR_MS
+  return Math.max(line.pauseMs ?? 0, reading) / speedScale.value
 }
 
 function typeDuration(line: DialogueLine): number {
-  if (!line.text.trim() || prefersReducedMotion()) return 0
-  return scaled(line.text.length * 28)
+  if (!line.text.trim()) return 0
+  return (line.text.length * DIALOGUE_CHAR_MS) / speedScale.value
 }
 
 async function playCurrentLine(token: number): Promise<void> {
@@ -188,12 +191,12 @@ async function playCurrentLine(token: number): Promise<void> {
     bubbleSpeaker.value = line.speaker
     bubbleText.value = line.text
     const typeMs = typeDuration(line)
-    await sleep(typeMs)
+    await wait(typeMs)
     if (token !== playToken || !open.value) return
     typingComplete.value = true
-    await sleep(holdDuration(line))
+    await wait(holdDuration(line))
   } else {
-    await sleep(holdDuration(line))
+    await wait(holdDuration(line))
   }
 
   if (token !== playToken || !open.value || phase.value !== 'story') return
@@ -220,11 +223,11 @@ function scheduleApprovedAdvance() {
 
 async function runBoot() {
   bootProgress.value = 0
-  const steps = prefersReducedMotion() ? 2 : 8
+  const steps = 8
   for (let i = 1; i <= steps; i += 1) {
     if (!open.value || phase.value !== 'boot') return
     bootProgress.value = Math.round((i / steps) * 100)
-    await sleep(prefersReducedMotion() ? 40 : 70 / speedScale.value)
+    await wait(70 / speedScale.value)
   }
   if (!open.value || phase.value !== 'boot') return
   phase.value = 'story'
@@ -244,7 +247,7 @@ async function close() {
   closing.value = true
   clearTimers()
   cancelRecruitmentActors()
-  await sleep(prefersReducedMotion() ? 40 : 280)
+  await wait(280)
   open.value = false
   document.body.style.overflow = ''
   reset()
@@ -279,7 +282,7 @@ function advanceStory() {
       cameraBeat.value = 'hire'
       rh.setMood('celebrate')
       cto.setMood('celebrate')
-      useFolio().confetti()
+      useFolio().confetti({ force: true })
       scheduleApprovedAdvance()
       return
     }

@@ -34,6 +34,10 @@ export interface DialogueLine {
   camera?: CameraBeat
 }
 
+/** Keep in sync with SpeechBubble typewriter step. */
+export const DIALOGUE_CHAR_MS = 42
+export const DIALOGUE_HOLD_BASE_MS = 1500
+
 export const RECRUITMENT_CANDIDATE = {
   name: PROFILE.fullName,
   role: 'Développeur logiciel',

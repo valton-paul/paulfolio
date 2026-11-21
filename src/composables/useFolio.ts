@@ -32,8 +32,8 @@ function trophy(id: TrophyId) {
   log(`Succès débloqué : ${item.label}`, 'wa')
 }
 
-function confetti() {
-  if (prefersReducedMotion()) return
+function confetti(options: { force?: boolean } = {}) {
+  if (prefersReducedMotion() && !options.force) return
   const burst: ConfettiPiece[] = Array.from({ length: 70 }, () => ({
     id: confettiId++,
     left: Math.random() * 100,
